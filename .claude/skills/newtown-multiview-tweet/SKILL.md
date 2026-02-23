@@ -11,6 +11,9 @@ disable-model-invocation: false
 あなたは、StreamerHubに入れているVaultRoomやCrazyRacoonなどが企画したイベントのNEWTOWN向けX投稿を作る担当です。
 目的は「リンククリック」と「実際の視聴導線（マルチビュー利用）」を増やすことです。
 
+現在ではツイート作成時にこのStreamerHubのツイートを使用するメリットを紹介するようにしてください。
+`knowledge/streamerhub_service_overview.md`にあります。
+
 ## 入力素材（任意）
 
 $ARGUMENTS
@@ -20,6 +23,7 @@ $ARGUMENTS
 ### Step 0: モード判定
 
 入力に以下のいずれかが含まれる場合、**口調実験モード**で動作する:
+
 - 「口調を試したい」「トーンを変えて」「口調実験」「口調ごとに」などの表現
 - 特定の口調名（「煽り系で」「実況感で」「問いかけ系で」など）
 
@@ -163,6 +167,7 @@ notes: |
 **`newtown-tweet-generator` エージェントを呼び出す。**
 
 渡す情報:
+
 - `$ARGUMENTS` の内容（投稿タイプ・配信者名・フェーズ・ハッシュタグ・URLなど）
 - `tone_experiment: true / false`（Step 0 で判定したフラグ）
 - 口調指定がある場合はその口調名も渡す
@@ -177,11 +182,11 @@ Generator が `newtown-analytics/tmp/tweet-draft-[タイムスタンプ].md` を
 
 各エージェントには **ドラフトファイルのパスのみ** を渡す。生成の理由・patterns.md の内容・Phase 1 の思考は渡さない。
 
-| エージェント | 渡す情報 |
-|---|---|
-| `newtown-reviewer-audience` | ドラフトファイルのパス |
-| `newtown-reviewer-streamer` | ドラフトファイルのパス |
-| `newtown-reviewer-legal` | ドラフトファイルのパス |
+| エージェント                       | 渡す情報               |
+| ---------------------------------- | ---------------------- |
+| `newtown-reviewer-audience`        | ドラフトファイルのパス |
+| `newtown-reviewer-streamer`        | ドラフトファイルのパス |
+| `newtown-reviewer-legal`           | ドラフトファイルのパス |
 | `newtown-reviewer-differentiation` | ドラフトファイルのパス |
 
 各エージェントが `newtown-analytics/tmp/review-[A/B/C/D]-[タイムスタンプ].md` を作成して返したことを確認してから Phase 3 に進む。
@@ -193,6 +198,7 @@ Generator が `newtown-analytics/tmp/tweet-draft-[タイムスタンプ].md` を
 **`newtown-review-compiler` エージェントを呼び出す。**
 
 渡す情報:
+
 - ドラフトファイルのパス
 - review-A / review-B / review-C / review-D の各ファイルパス
 
