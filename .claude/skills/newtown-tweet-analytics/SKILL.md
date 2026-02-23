@@ -1,6 +1,6 @@
 ---
 name: newtown-tweet-analytics
-description: 過去のNEWTOWNツイートデータをマルチサブエージェントで多角分析し、次回ツイート作成のための仮説・実験案と構造化ナレッジを出力する。knowledge/patterns.md（生成スキル参照用）とdata/analytics_data/{日付}-{連番}-analytics.md（ユーザー向け全体レポート）の2ファイルに保存する。
+description: 過去のNEWTOWNツイートデータとGoogle Analyticsデータをマルチサブエージェントで多角分析し、次回ツイート作成のための仮説・実験案と構造化ナレッジを出力する。knowledge/patterns.md（生成スキル参照用）とdata/analytics_data/{日付}-{連番}-analytics.md（ユーザー向け全体レポート）の2ファイルに保存する。
 argument-hint: "[オプション: 分析フォーカス軸 or CSVディレクトリパス]"
 user-invocable: true
 disable-model-invocation: false
@@ -13,10 +13,10 @@ disable-model-invocation: false
 
 分析結果は **2つのファイル** に保存します:
 
-| ファイル | 目的 | 対象 |
-|---|---|---|
-| `newtown-analytics/knowledge/patterns.md` | ツイート生成スキルが参照する構造化ナレッジ（上書き更新） | `newtown-multiview-tweet` スキル |
-| `newtown-analytics/data/analytics_data/{YYYY-MM-DD}-{連番}-analytics.md` | ユーザー向けの全体分析レポート（毎回新規作成） | 施策判断・仮説検証用 |
+| ファイル                                                                 | 目的                                                     | 対象                             |
+| ------------------------------------------------------------------------ | -------------------------------------------------------- | -------------------------------- |
+| `newtown-analytics/knowledge/patterns.md`                                | ツイート生成スキルが参照する構造化ナレッジ（上書き更新） | `newtown-multiview-tweet` スキル |
+| `newtown-analytics/data/analytics_data/{YYYY-MM-DD}-{連番}-analytics.md` | ユーザー向けの全体分析レポート（毎回新規作成）           | 施策判断・仮説検証用             |
 
 ## 入力素材（任意）
 
@@ -26,9 +26,9 @@ $ARGUMENTS
 
 ---
 
-## 処理フロー（8エージェント構成）
+## 処理フロー（9エージェント構成）
 
-以下の **8つのサブエージェント** を順番に実行します。
+以下の **9つのサブエージェント** を順番に実行します。
 各エージェントの出力はtmpファイル経由で次のエージェントに引き継がれます。
 
 ---
@@ -37,84 +37,94 @@ $ARGUMENTS
 
 CSVデータをPythonスクリプトで処理し、`analysis_output.json` を生成する。
 
-**入力**: `newtown-analytics/data/tweet_analytics/*.csv`  
+**入力**: `newtown-analytics/data/tweet_analytics/*.csv`
 **出力**: `newtown-analytics/knowledge/analysis_output.json`
 
 ---
 
-### Step 2〜5: 並列分析エージェント（`analysis_output.json` が完成してから起動）
+### Step 2〜6: 並列分析エージェント（`analysis_output.json` が完成してから起動）
 
-Step 1 の完了後、以下の4エージェントを **並列実行** する:
+Step 1 の完了後、以下の5エージェントを **並列実行** する:
 
-| エージェント | 分析内容 | 出力tmpファイル |
-|---|---|---|
-| `newtown-analytics-hook` | フックタイプ別効果・フックテンプレート抽出 | `analytics-hook-[YYYYMMDD].md` |
-| `newtown-analytics-hashtag` | タグ組み合わせ×クリック効果・フェーズ別推奨タグ | `analytics-hashtag-[YYYYMMDD].md` |
-| `newtown-analytics-phase` | 投稿フェーズ別パフォーマンス・推奨投稿シーケンス | `analytics-phase-[YYYYMMDD].md` |
-| `newtown-analytics-algorithm` | Xアルゴリズム観点の解釈・For You戦略 | `analytics-algorithm-[YYYYMMDD].md` |
+| エージェント                  | 分析内容                                              | 出力tmpファイル                     |
+| ----------------------------- | ----------------------------------------------------- | ----------------------------------- |
+| `newtown-analytics-hook`      | フックタイプ別効果・フックテンプレート抽出            | `analytics-hook-[YYYYMMDD].md`      |
+| `newtown-analytics-hashtag`   | タグ組み合わせ×クリック効果・フェーズ別推奨タグ       | `analytics-hashtag-[YYYYMMDD].md`   |
+| `newtown-analytics-phase`     | 投稿フェーズ別パフォーマンス・推奨投稿シーケンス      | `analytics-phase-[YYYYMMDD].md`     |
+| `newtown-analytics-algorithm` | Xアルゴリズム観点の解釈・For You戦略                  | `analytics-algorithm-[YYYYMMDD].md` |
+| `newtown-analytics-ga`        | Google AnalyticsデータのX流入・サイト行動・地域分析   | `analytics-ga-[YYYYMMDD].md`        |
 
 全tmpファイルは `newtown-analytics/tmp/` に保存される。
 
+`newtown-analytics-ga` エージェントは `newtown-analytics/data/google-analytics/*.csv` を直接読み込む（`analysis_output.json` に依存しないため、Step 1と同時に起動しても構わないが、実装上は他の並列エージェントと同タイミングで起動する）。
+
 ---
 
-### Step 6: `newtown-analytics-hypothesis`（仮説生成・実験案設計）
+### Step 7: `newtown-analytics-hypothesis`（仮説生成・実験案設計）
 
-Step 2〜5の全tmpファイルを読み込み、**次回ツイートで試すべき具体的な仮説** を生成する。
+Step 2〜6の全tmpファイルを読み込み、**次回ツイートで試すべき具体的な仮説** を生成する。
 
-**入力**: Step 2〜5の全tmpファイル + `analysis_output.json`  
+**入力**: Step 2〜6の全tmpファイル（hook/hashtag/phase/algorithm/ga） + `analysis_output.json`
 **出力**: `newtown-analytics/tmp/analytics-hypothesis-[YYYYMMDD].md`
 
 出力内容:
+
 - 最優先で試すべき仮説（A/B比較案・判断指標付き）
 - 中期的に検証すべき仮説
 - 今後やらないと決めること
 - 次のツイート作成で即反映できるチェックリスト
+- **GAデータに基づくサイト流入改善仮説**（新規）
 
 ---
 
-### Step 7: `newtown-analytics-compiler`（patterns.md 更新）
+### Step 8: `newtown-analytics-compiler`（patterns.md 更新）
 
-Step 2〜6の全出力を統合し、`patterns.md` を上書き更新する。
+Step 2〜7の全出力を統合し、`patterns.md` を上書き更新する。
 
-**入力**: Step 2〜6の全tmpファイル + `analysis_output.json`  
+**入力**: Step 2〜7の全tmpファイル（hook/hashtag/phase/algorithm/ga/hypothesis） + `analysis_output.json`
 **出力**: `newtown-analytics/knowledge/patterns.md`（上書き）
 
 patterns.md の構成:
+
 1. サマリー（全体統計）
 2. フック効果パターン
 3. ハッシュタグ組み合わせ
 4. 投稿フェーズ別パフォーマンス
 5. エンゲージメント構造分類
 6. 高パフォーマンス投稿 TOP5
-7. ツイート生成への活用指針（`newtown-multiview-tweet` 参照用）
-8. **次回実験仮説**（新規追加セクション）
+7. **Google Analytics連携：X→サイト流入パフォーマンス**（新規追加セクション）
+8. ツイート生成への活用指針（`newtown-multiview-tweet` 参照用）
+9. **次回実験仮説**（新規追加セクション）
 
 ---
 
-### Step 8: `newtown-analytics-reporter`（全体レポート出力・tmpクリーンアップ）
+### Step 9: `newtown-analytics-reporter`（全体レポート出力・tmpクリーンアップ）
 
 全分析内容をユーザー向けレポートとして保存し、tmpファイルを削除する。
 
-**入力**: Step 2〜6の全tmpファイル + `analysis_output.json`  
+**入力**: Step 2〜7の全tmpファイル（hook/hashtag/phase/algorithm/ga/hypothesis） + `analysis_output.json`
 **出力**: `newtown-analytics/data/analytics_data/{YYYY-MM-DD}-{連番}-analytics.md`（新規）
 
 レポートの構成:
+
 1. 概要（全体統計）
 2. フック効果分析
 3. ハッシュタグ分析
 4. 投稿フェーズ・タイミング分析
 5. エンゲージメント構造分析
 6. 高パフォーマンス投稿 TOP5
-7. **次回ツイートへの仮説・実験案**（仮説エージェントの全出力）
-8. データ品質・注意事項
+7. **Google Analytics分析：X→サイト流入・ページパフォーマンス**（新規）
+8. **次回ツイートへの仮説・実験案**（仮説エージェントの全出力）
+9. データ品質・注意事項
 
-保存完了後、tmpファイル（analytics-hook/hashtag/phase/algorithm/hypothesis）を削除する。
+保存完了後、tmpファイル（analytics-hook/hashtag/phase/algorithm/ga/hypothesis）を削除する。
 
 ---
 
 ## 参照データ
 
-- **CSV**: `newtown-analytics/data/tweet_analytics/*.csv`（Pythonスクリプトが自動で全件読み込む）
+- **ツイートCSV**: `newtown-analytics/data/tweet_analytics/*.csv`（Pythonスクリプトが自動で全件読み込む）
+- **Google Analytics CSV**: `newtown-analytics/data/google-analytics/*.csv`（GAエージェントが直接読み込む）
 - **Xアルゴリズム**: `knowledge/x_algorithm/`
 - **中間出力**: `newtown-analytics/knowledge/analysis_output.json`
 

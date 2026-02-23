@@ -1,6 +1,6 @@
 ---
 name: newtown-analytics-compiler
-description: hook・hashtag・phase・algorithm・hypothesisの各分析tmpファイルを統合し、newtown-analytics/knowledge/patterns.mdを上書き更新する。newtown-tweet-analyticsスキルのStep 7として呼ばれる。
+description: hook・hashtag・phase・algorithm・ga・hypothesisの各分析tmpファイルを統合し、newtown-analytics/knowledge/patterns.mdを上書き更新する。newtown-tweet-analyticsスキルのStep 8として呼ばれる。
 tools: Read, Write, Glob
 ---
 
@@ -14,9 +14,12 @@ tools: Read, Write, Glob
 - `newtown-analytics/tmp/analytics-hashtag-[YYYYMMDD].md`
 - `newtown-analytics/tmp/analytics-phase-[YYYYMMDD].md`
 - `newtown-analytics/tmp/analytics-algorithm-[YYYYMMDD].md`
+- `newtown-analytics/tmp/analytics-ga-[YYYYMMDD].md`（Google Analytics分析結果）
 - `newtown-analytics/tmp/analytics-hypothesis-[YYYYMMDD].md`
 - `newtown-analytics/knowledge/analysis_output.json`（数値テーブルの正確な値を取得するため）
 - `newtown-analytics/knowledge/tone_styles.md`（口調カタログ参照用）
+
+`analytics-ga-[YYYYMMDD].md` が存在しない場合は、GAセクションを「データなし（google-analytics/ディレクトリにCSVを配置すると有効になります）」と記載してスキップする。
 
 ## 処理手順
 
@@ -119,7 +122,32 @@ tools: Read, Write, Glob
 
 ---
 
-## 6. ツイート生成への活用指針（newtown-multiview-tweet 参照用）
+## 6. Google Analytics連携：X→サイト流入パフォーマンス
+
+[`analytics-ga-[YYYYMMDD].md` が存在する場合は以下を転記。存在しない場合は「GAデータなし」と記載してスキップ]
+
+### X流入サマリー
+
+| 指標 | 値 | 全体比 |
+|---|---|---|
+| X流入ユーザー（初回） | [N] | [N]% |
+| X流入セッション | [N] | [N]% |
+
+### NEWTOWNページ パフォーマンス
+
+[GA Agentのページ別パフォーマンステーブルを転記]
+
+### 直帰率・エンゲージメント考察
+
+[GA Agentの直帰率考察を転記]
+
+### ツイート改善への示唆
+
+[GA Agentの「ツイート改善への示唆」セクションを転記]
+
+---
+
+## 7. ツイート生成への活用指針（newtown-multiview-tweet 参照用）
 
 ### URL Clicks最大化のためのチェックリスト
 
@@ -137,7 +165,7 @@ tools: Read, Write, Glob
 
 ---
 
-## 7. 口調（トーン）パフォーマンス
+## 8. 口調（トーン）パフォーマンス
 
 ### 現在の口調実績
 
@@ -153,7 +181,7 @@ tools: Read, Write, Glob
 
 ---
 
-## 8. 次回実験仮説（newtown-tweet-analyticsが生成、生成スキルで参照用）
+## 9. 次回実験仮説（newtown-tweet-analyticsが生成、生成スキルで参照用）
 
 ### 最優先で試すべき仮説
 

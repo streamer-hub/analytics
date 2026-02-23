@@ -1,6 +1,6 @@
 ---
 name: newtown-analytics-reporter
-description: 全分析tmpファイルを統合し、ユーザー向けの全体分析レポートをnewtown-analytics/data/analytics_data/に新規保存する。newtown-tweet-analyticsスキルのStep 8（最終）として呼ばれる。
+description: 全分析tmpファイルを統合し、ユーザー向けの全体分析レポートをnewtown-analytics/data/analytics_data/に新規保存する。newtown-tweet-analyticsスキルのStep 9（最終）として呼ばれる。
 tools: Read, Write, Glob
 ---
 
@@ -14,6 +14,7 @@ tools: Read, Write, Glob
 - `newtown-analytics/tmp/analytics-hashtag-[YYYYMMDD].md`
 - `newtown-analytics/tmp/analytics-phase-[YYYYMMDD].md`
 - `newtown-analytics/tmp/analytics-algorithm-[YYYYMMDD].md`
+- `newtown-analytics/tmp/analytics-ga-[YYYYMMDD].md`（Google Analytics分析結果。存在しない場合はスキップ）
 - `newtown-analytics/tmp/analytics-hypothesis-[YYYYMMDD].md`
 - `newtown-analytics/knowledge/analysis_output.json`
 
@@ -51,6 +52,7 @@ generated_by: newtown-tweet-analytics
 | 総URL Clicks | [N] |
 | 平均CTR | [N]% |
 | 平均インプレッション | [N] |
+| GA連携 | [あり（X流入ユーザー: N人）/ なし] |
 
 ---
 
@@ -142,13 +144,39 @@ generated_by: newtown-tweet-analytics
 
 ---
 
-## 6. 次回ツイートへの仮説・実験案
+## 6. Google Analytics分析：X→サイト流入・ページパフォーマンス
+
+[`analytics-ga-[YYYYMMDD].md` が存在する場合は以下のように転記。存在しない場合は「GAデータなし（newtown-analytics/data/google-analytics/にCSVを配置すると分析が有効になります）」と記載する]
+
+### X（t.co）流入サマリー
+
+[GA Agentの「X（t.co）流入分析」テーブルと考察を転記]
+
+### NEWTOWNページ パフォーマンス
+
+[GA Agentのページ別テーブルと直帰率考察を転記]
+
+### ユーザーリテンション
+
+[GA Agentのリテンション分析を転記]
+
+### 地域分析
+
+[GA Agentの地域TOP10テーブルとエリア別集計を転記]
+
+### ツイート改善への示唆
+
+[GA Agentの「ツイート改善への示唆」セクションを転記]
+
+---
+
+## 7. 次回ツイートへの仮説・実験案
 
 [Hypothesis Agentの全内容をそのまま転記]
 
 ---
 
-## 7. データ品質・注意事項
+## 8. データ品質・注意事項
 
 - 集計投稿数: [N]件
 - [サンプルが2件以下の分析軸は個別に注記]
@@ -165,8 +193,11 @@ rm newtown-analytics/tmp/analytics-hook-[YYYYMMDD].md
 rm newtown-analytics/tmp/analytics-hashtag-[YYYYMMDD].md
 rm newtown-analytics/tmp/analytics-phase-[YYYYMMDD].md
 rm newtown-analytics/tmp/analytics-algorithm-[YYYYMMDD].md
+rm newtown-analytics/tmp/analytics-ga-[YYYYMMDD].md
 rm newtown-analytics/tmp/analytics-hypothesis-[YYYYMMDD].md
 ```
+
+`analytics-ga-[YYYYMMDD].md` が存在しない場合はそのファイルの削除コマンドはスキップする。
 
 ### Step 4: 完了報告
 

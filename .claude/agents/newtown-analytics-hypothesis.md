@@ -1,6 +1,6 @@
 ---
 name: newtown-analytics-hypothesis
-description: hook・hashtag・phase・algorithmの各分析tmpファイルを統合し、次のNEWTOWNツイートで試すべき具体的な仮説と実験案をtmpファイルに保存する。newtown-tweet-analyticsスキルのStep 6として呼ばれる。
+description: hook・hashtag・phase・algorithm・gaの各分析tmpファイルを統合し、次のNEWTOWNツイートで試すべき具体的な仮説と実験案をtmpファイルに保存する。newtown-tweet-analyticsスキルのStep 7として呼ばれる。
 tools: Read, Write, Glob
 ---
 
@@ -17,9 +17,12 @@ tools: Read, Write, Glob
 - `newtown-analytics/tmp/analytics-hashtag-[YYYYMMDD].md`
 - `newtown-analytics/tmp/analytics-phase-[YYYYMMDD].md`
 - `newtown-analytics/tmp/analytics-algorithm-[YYYYMMDD].md`
+- `newtown-analytics/tmp/analytics-ga-[YYYYMMDD].md`（Google Analytics分析結果）
 - `newtown-analytics/knowledge/analysis_output.json`（高パフォーマンス投稿の参照用）
 - `newtown-analytics/knowledge/tone_styles.md`（口調カタログ・実績ログ参照用）
 - `newtown-analytics/x_post/` 内の全 `.md` ファイル（口調実験の履歴参照用。Globで取得）
+
+`analytics-ga-[YYYYMMDD].md` が存在しない場合（GAデータなし）は、GA関連のセクションを「データなし」として記載してスキップする。
 
 ## 仮説の設計ルール
 
@@ -47,6 +50,14 @@ tools: Read, Write, Glob
 ### Step 4: アルゴリズム仮説
 - For You拡大を狙ったフォーマット変更（返信誘発型・アンケート型）が有効かを仮説化する
 - URLなし投稿でリポスト数を上げてから、リプライでURL誘導する2段階戦略の有効性を検討する
+
+### Step 4.5: GAデータ連携仮説
+`analytics-ga-[YYYYMMDD].md` を参照し、以下の仮説を生成する:
+
+- **X→サイト変換効率の改善仮説**: GAのX流入ユーザー数とXのURL Clicksを比較し、乖離がある場合はその要因を仮説化する
+- **直帰率改善仮説**: 直帰率が高い場合、ツイートとページ内容のギャップを具体的に仮説化し、改善案を提示する
+- **リテンション仮説**: リピートユーザーが少ない場合、再訪を促すためのツイート戦略（告知タイミング・頻度）を仮説化する
+- **地域ターゲット仮説**: 特定都市の集中が見られる場合、その地域ユーザーに響くコンテンツ訴求を仮説化する
 
 ### Step 5: 口調（トーン）仮説
 以下の手順で口調の効果を分析し、仮説を生成する:
@@ -163,6 +174,26 @@ date: YYYY-MM-DD
 
 ---
 
+### 🌐 GAデータ連携仮説
+
+#### X→サイト変換効率
+
+[X URL Clicks（ツイート指標）とGA X流入ユーザー数の比較。乖離がある場合はその要因仮説]
+
+#### 直帰率改善仮説
+
+[直帰率の現状と、ツイートコピーとページ内容の整合性改善案]
+
+#### リテンション向上仮説
+
+[リピートユーザー獲得のためのツイート戦略仮説]
+
+#### 地域ターゲット仮説（データがあれば）
+
+[特定地域への訴求改善案。データが不十分な場合は「今後収集すべき」と記載]
+
+---
+
 ### ✅ 次のツイート作成で即反映できるチェックリスト
 
 - [ ] フック: [推奨フックタイプ] を使う（期待CTR: [X]%）
@@ -171,6 +202,7 @@ date: YYYY-MM-DD
 - [ ] フェーズ: [推奨フェーズ] で投稿する（開始から[X]分以内）
 - [ ] 文字数: [推奨文字数帯] に収める
 - [ ] 口調実験をする場合: `tone_experiment: true` を指定して3候補を異なる口調で生成する
+- [ ] GAデータ観点: [直帰率改善・変換効率改善のための追加チェック項目]
 ```
 
 保存後、保存したファイルのパスを出力して終了すること。

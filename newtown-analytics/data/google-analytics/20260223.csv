@@ -1,0 +1,217 @@
+# ----------------------------------------
+# レポートのスナップショット
+# アカウント: Default Account for Firebase
+# プロパティ: streamerhub
+# ----------------------------------------
+#  
+# 開始日: 20260127
+# 終了日: 20260223
+アクティブ ユーザー,新規ユーザー数,アクティブ ユーザーあたりの平均エンゲージメント時間,イベント数
+240,240,286.8958333333333,5902
+
+#  
+# 開始日: 20260127
+# 終了日: 20260223
+ページ タイトルとスクリーン クラス,表示回数,アクティブ ユーザー,イベント数,直帰率
+NEWTOWN - MultiView | StreamerHub,660,235,5379,0.4023809523809524
+StreamerHub,225,37,471,0.0684931506849315
+Gon.G GON軍団 - MultiView | StreamerHub,4,4,17,0.75
+Multi View gta-newtown-2026 | StreamerHub,2,2,4,0
+Multi View gta-newtown | StreamerHub,1,1,5,0
+
+#  
+# 開始日: 20260127
+# 終了日: 20260223
+ユーザーの最初の参照元 / メディア,アクティブ ユーザー
+t.co / referral,197
+(direct) / (none),35
+facebook.com / referral,4
+google / organic,2
+m.facebook.com / referral,2
+
+#  
+# 開始日: 20260127
+# 終了日: 20260223
+セッションの参照元 / メディア,セッション
+t.co / referral,325
+(direct) / (none),95
+google / organic,15
+yahoo / organic,9
+facebook.com / referral,4
+m.facebook.com / referral,2
+
+#  
+# 開始日: 20260127
+# 終了日: 20260223
+N 日目,new,returning
+0000,0,0
+0001,0,0
+0002,0,0
+0003,0,0
+0004,0,0
+0005,0,0
+0006,0,0
+0007,0,0
+0008,0,0
+0009,0,0
+0010,0,0
+0011,0,0
+0012,0,0
+0013,0,0
+0014,0,0
+0015,0,0
+0016,0,0
+0017,0,0
+0018,0,0
+0019,0,0
+0020,0,0
+0021,0,0
+0022,0,0
+0023,0,0
+0024,79,13
+0025,101,26
+0026,39,26
+0027,24,19
+
+# プラットフォーム上のアクティビティの比較
+# 開始日: 20260127
+# 終了日: 20260223
+プラットフォーム,キーイベント
+
+
+#  
+# 開始日: 20260127
+# 終了日: 20260223
+市区町村,アクティブ ユーザー
+Osaka,13
+Sapporo,12
+Kobe,9
+Tahara,7
+Fukuoka,5
+Hiroshima,5
+Minato City,5
+Setagaya City,5
+Shinjuku City,5
+Kawasaki,4
+Kyoto,4
+Nagoya,4
+Sakai,4
+Sakura,4
+Yokohama,4
+Ayase,3
+Kawaguchi,3
+Koriyama,3
+Saitama,3
+Amagasaki,2
+Forest City,2
+Hachinohe,2
+Iida,2
+Itabashi City,2
+Kita City,2
+Kitakyushu,2
+Matsubara,2
+Matsudo,2
+Mitaka,2
+Narashino,2
+Niigata,2
+Nishinomiya,2
+Nishitokyo,2
+Obihiro,2
+Oharu,2
+Okayama,2
+Ota City,2
+Sendai,2
+Seoul,2
+Suginami City,2
+Sumida City,2
+Takaoka,2
+Toshima City,2
+Tsu,2
+Yamato,2
+Aizuwakamatsu,1
+Akashi,1
+Akita,1
+Anseong-si,1
+Aomori,1
+Asaka,1
+Boardman,1
+Buzen,1
+Chiba,1
+Chita,1
+Chiyoda City,1
+Edogawa City,1
+Ena,1
+Fort Worth,1
+Fukuyama,1
+Gallatin,1
+Habikino,1
+Hakodate,1
+Hamamatsu,1
+Hikone,1
+Ibaraki,1
+Iruma,1
+Iyo,1
+Kanie,1
+Kashiba,1
+Kashiwa,1
+Katsushika City,1
+Kiyama,1
+Kizugawa,1
+Konan,1
+Koshigaya,1
+Kuki,1
+Kurume,1
+Kutchan,1
+Kyotanabe,1
+Lapu-Lapu,1
+Machida,1
+Maebashi,1
+Miki,1
+Minami-Alps,1
+Miyakonojo,1
+Nagano,1
+Nagaokakyo,1
+Naha,1
+Niihama,1
+Oita,1
+Oizumi,1
+Padang,1
+Plymouth,1
+Prineville,1
+Sagamihara,1
+Sasebo,1
+Sennan,1
+Shah Alam,1
+Shibecha,1
+Shibuya,1
+Shimada,1
+Shiso,1
+Sukagawa,1
+Takamatsu,1
+Takatsuki,1
+Tama,1
+Tarui,1
+Tateyama,1
+Tokai,1
+Tottori,1
+Toyama,1
+Toyohashi,1
+Toyokawa,1
+Tsukuba,1
+Ube,1
+Ueda,1
+Utsunomiya,1
+Wakkanai,1
+Warabi,1
+Yamagata,1
+Yao,1
+Yokkaichi,1
+Yokosuka,1
+Yonago,1
+Yotsukaido,1
+
+#  
+# 開始日: 20260127
+# 終了日: 20260223
+オーディエンス名,アクティブ ユーザー
+All Users,240
