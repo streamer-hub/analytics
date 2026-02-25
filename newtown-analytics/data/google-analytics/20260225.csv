@@ -1,0 +1,249 @@
+# ----------------------------------------
+# レポートのスナップショット
+# アカウント: Default Account for Firebase
+# プロパティ: streamerhub
+# ----------------------------------------
+#  
+# 開始日: 20260128
+# 終了日: 20260224
+アクティブ ユーザー,新規ユーザー数,アクティブ ユーザーあたりの平均エンゲージメント時間,イベント数
+291,291,334.35395189003435,7585
+
+#  
+# 開始日: 20260128
+# 終了日: 20260224
+ページ タイトルとスクリーン クラス,表示回数,アクティブ ユーザー,イベント数,直帰率
+NEWTOWN - MultiView | StreamerHub,695,253,5610,0.41501103752759383
+StreamerHub,265,47,533,0.09090909090909091
+NEWTOWN | StreamerHub,58,26,520,0.16666666666666666
+NEWTOWN - ギャング [Dear13ro.] | StreamerHub,31,10,390,0.29411764705882354
+NEWTOWN - ギャング [atroce myrtille] | StreamerHub,26,15,337,0.16666666666666666
+NEWTOWN - 警察 | StreamerHub,6,2,46,0
+Gon.G GON軍団 - MultiView | StreamerHub,4,4,17,0.75
+NEWTOWN - ギャング [PERSEPHONE] | StreamerHub,3,2,24,0.5
+Multi View gta-newtown-2026 | StreamerHub,2,2,4,0
+NEWTOWN - Gang [Dear13ro.] | StreamerHub,2,1,40,0
+Multi View gta-newtown | StreamerHub,1,1,5,0
+NEWTOWN - Share | StreamerHub,1,1,23,0
+
+#  
+# 開始日: 20260128
+# 終了日: 20260224
+ユーザーの最初の参照元 / メディア,アクティブ ユーザー
+t.co / referral,235
+(direct) / (none),48
+facebook.com / referral,4
+google / organic,2
+m.facebook.com / referral,2
+
+#  
+# 開始日: 20260128
+# 終了日: 20260224
+セッションの参照元 / メディア,セッション
+t.co / referral,393
+(direct) / (none),117
+yahoo / organic,18
+google / organic,15
+facebook.com / referral,4
+m.facebook.com / referral,2
+
+#  
+# 開始日: 20260128
+# 終了日: 20260224
+N 日目,new,returning
+0000,0,0
+0001,0,0
+0002,0,0
+0003,0,0
+0004,0,0
+0005,0,0
+0006,0,0
+0007,0,0
+0008,0,0
+0009,0,0
+0010,0,0
+0011,0,0
+0012,0,0
+0013,0,0
+0014,0,0
+0015,0,0
+0016,0,0
+0017,0,0
+0018,0,0
+0019,0,0
+0020,0,0
+0021,0,0
+0022,0,0
+0023,79,13
+0024,101,26
+0025,39,26
+0026,29,18
+0027,46,21
+
+# プラットフォーム上のアクティビティの比較
+# 開始日: 20260128
+# 終了日: 20260224
+プラットフォーム,キーイベント
+
+
+#  
+# 開始日: 20260128
+# 終了日: 20260224
+市区町村,アクティブ ユーザー
+Osaka,16
+Sapporo,12
+Kobe,10
+Tahara,10
+Sakura,8
+Shinjuku City,7
+Minato City,6
+Amagasaki,5
+Fukuoka,5
+Hiroshima,5
+Kyoto,5
+Nagoya,5
+Saitama,5
+Setagaya City,5
+Kawasaki,4
+Sakai,4
+Yokohama,4
+Ayase,3
+Fujinomiya,3
+Iida,3
+Kawaguchi,3
+Kita City,3
+Koriyama,3
+Ota City,3
+Chiyoda City,2
+Council Bluffs,2
+Forest City,2
+Hachinohe,2
+Hachioji,2
+Itabashi City,2
+Kitakyushu,2
+Matsubara,2
+Matsudo,2
+Mitaka,2
+Narashino,2
+Niigata,2
+Nishinomiya,2
+Nishitokyo,2
+Obihiro,2
+Oharu,2
+Okayama,2
+Sendai,2
+Seoul,2
+Shibuya,2
+Shimada,2
+Shizuoka,2
+Suginami City,2
+Sumida City,2
+Takaoka,2
+Toshima City,2
+Tsu,2
+Yamato,2
+Aizuwakamatsu,1
+Akashi,1
+Akita,1
+Anseong-si,1
+Aomori,1
+Asaka,1
+Aspen,1
+Boardman,1
+Buzen,1
+Changwon-si,1
+Chiba,1
+Chita,1
+Edogawa City,1
+Ena,1
+Fort Worth,1
+Fukuyama,1
+Gallatin,1
+Habikino,1
+Haebaru,1
+Hakodate,1
+Hamamatsu,1
+Hanover,1
+Hikone,1
+Ibaraki,1
+Ichikawa,1
+Iruma,1
+Itami,1
+Iwaki,1
+Iyo,1
+Kaita,1
+Kanie,1
+Kashiba,1
+Kashiwa,1
+Kasukabe,1
+Katsushika City,1
+Kitajima,1
+Kiyama,1
+Kizugawa,1
+Kohima,1
+Konan,1
+Koshigaya,1
+Kuki,1
+Kurume,1
+Kutchan,1
+Kyotanabe,1
+Lapu-Lapu,1
+Machida,1
+Maebashi,1
+Maibara,1
+Miki,1
+Minami-Alps,1
+Mito,1
+Miyakonojo,1
+Nagano,1
+Nagaokakyo,1
+Naha,1
+Niihama,1
+Oita,1
+Oizumi,1
+Otawara,1
+Padang,1
+Plymouth,1
+Prineville,1
+Sagamihara,1
+Sasebo,1
+Sennan,1
+Shah Alam,1
+Shanghai,1
+Shibecha,1
+Shihoro,1
+Shiso,1
+Sukagawa,1
+Suwa,1
+Takamatsu,1
+Takasaki,1
+Takatsuki,1
+Tama,1
+Tarui,1
+Tateyama,1
+Tokai,1
+Toride,1
+Tottori,1
+Toyama,1
+Toyohashi,1
+Toyokawa,1
+Toyota,1
+Tsukuba,1
+Tsukubamirai,1
+Ube,1
+Ueda,1
+Utsunomiya,1
+Wakkanai,1
+Warabi,1
+Yamagata,1
+Yao,1
+Yokkaichi,1
+Yokosuka,1
+Yonago,1
+Yotsukaido,1
+
+#  
+# 開始日: 20260128
+# 終了日: 20260224
+オーディエンス名,アクティブ ユーザー
+All Users,291

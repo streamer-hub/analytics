@@ -1,11 +1,11 @@
 {
   "summary": {
-    "total_posts": 19,
-    "total_impressions": 26226,
-    "total_url_clicks": 426,
-    "avg_impressions": 1380,
-    "avg_url_clicks": 22.4,
-    "avg_ctr": 0.0162,
+    "total_posts": 21,
+    "total_impressions": 28650,
+    "total_url_clicks": 436,
+    "avg_impressions": 1364,
+    "avg_url_clicks": 20.8,
+    "avg_ctr": 0.0151,
     "top_posts_by_imp": [
       {
         "text": "飛行場強盗実行中！！ 逃走劇を見よう！！👀 https://t.co/R6BNDCSiG5 #NEWTOWN #Dear",
@@ -69,10 +69,10 @@
   "hooks": [
     {
       "hook_type": "サービス紹介",
-      "count": 6,
-      "avg_imp": 999,
-      "avg_ctr": 0.0262,
-      "avg_url_clicks": 29.2,
+      "count": 7,
+      "avg_imp": 949,
+      "avg_ctr": 0.0234,
+      "avg_url_clicks": 25.6,
       "examples": [
         {
           "text": "#Dear13ro マルチビューを使ってDear13ro.を応援しよう！ https://t.co/",
@@ -159,6 +159,20 @@
           "text": "[修正報告] SANTA C.L.A.W.Sの坂本こんさんが配信中でもマルチビューにて表示されない問",
           "impressions": 61,
           "url_clicks": 0
+        }
+      ]
+    },
+    {
+      "hook_type": "質問形",
+      "count": 1,
+      "avg_imp": 1776,
+      "avg_ctr": 0.0034,
+      "avg_url_clicks": 6.0,
+      "examples": [
+        {
+          "text": "ところで初心者女子4人はどう誘われたの？【家入ポポ/飛良ひかり/山黒音玄/赤彩みあ/切り抜き/NEW",
+          "impressions": 1776,
+          "url_clicks": 6
         }
       ]
     },
@@ -335,6 +349,21 @@
     },
     {
       "tags": [
+        "(タグなし)"
+      ],
+      "count": 3,
+      "total_url_clicks": 10,
+      "max_url_clicks": 6,
+      "avg_url_clicks": 3.3,
+      "avg_imp": 1483,
+      "best_example": {
+        "text": "ところで初心者女子4人はどう誘われたの？【家入ポポ/飛良ひかり/山黒音玄/赤彩みあ/切り抜き/NEWTOWN】 http",
+        "url_clicks": 6,
+        "impressions": 1776
+      }
+    },
+    {
+      "tags": [
         "#どらぽめ"
       ],
       "count": 1,
@@ -367,6 +396,21 @@
     },
     {
       "tags": [
+        "#NEWTOWN"
+      ],
+      "count": 2,
+      "total_url_clicks": 6,
+      "max_url_clicks": 4,
+      "avg_url_clicks": 3.0,
+      "avg_imp": 635,
+      "best_example": {
+        "text": "マルチビューって使ったことある？ 1画面でDear13ro・AtroceMyrtille・Santa・Persephon",
+        "url_clicks": 4,
+        "impressions": 648
+      }
+    },
+    {
+      "tags": [
         "#GON軍団",
         "#StreamerHub"
       ],
@@ -379,36 +423,6 @@
         "text": "GON軍団 出陣中！！ https://t.co/NaF5bQkojy #GON軍団 #StreamerHub http",
         "url_clicks": 5,
         "impressions": 581
-      }
-    },
-    {
-      "tags": [
-        "(タグなし)"
-      ],
-      "count": 2,
-      "total_url_clicks": 4,
-      "max_url_clicks": 2,
-      "avg_url_clicks": 2.0,
-      "avg_imp": 1336,
-      "best_example": {
-        "text": "StreamerHubは情報大学生によって個人開発されているサービスです！ 新しい機能追加の要望やバグの報告はDMか以下",
-        "url_clicks": 2,
-        "impressions": 138
-      }
-    },
-    {
-      "tags": [
-        "#NEWTOWN"
-      ],
-      "count": 1,
-      "total_url_clicks": 2,
-      "max_url_clicks": 2,
-      "avg_url_clicks": 2.0,
-      "avg_imp": 622,
-      "best_example": {
-        "text": "傑作 小廻こま #NEWTOWN https://t.co/e76eAi2VOd https://t.co/YqCH8y",
-        "url_clicks": 2,
-        "impressions": 622
       }
     },
     {
@@ -430,10 +444,10 @@
   "phases": [
     {
       "phase": "その他",
-      "count": 7,
-      "avg_imp": 1090,
-      "avg_url_clicks": 28.0,
-      "avg_ctr": 0.0224
+      "count": 9,
+      "avg_imp": 1117,
+      "avg_url_clicks": 22.9,
+      "avg_ctr": 0.0185
     },
     {
       "phase": "開始直後",
@@ -503,9 +517,9 @@
       "examples": []
     },
     "low_performer": {
-      "count": 11,
-      "avg_ctr": 0.0093,
-      "avg_url_clicks": 11.8,
+      "count": 13,
+      "avg_ctr": 0.0086,
+      "avg_url_clicks": 10.8,
       "examples": [
         {
           "text": "飛行場強盗実行中！！ 逃走劇を見よう！！👀 https://t.co/R6BNDCSiG5 #NEWTOWN #Dear",
