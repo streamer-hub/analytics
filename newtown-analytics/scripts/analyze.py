@@ -53,15 +53,17 @@ def parse_csv(path: Path) -> list[dict]:
     return rows
 
 
-def load_all_csvs(csv_dir: Path) -> list[dict]:
+def load_all_csvs(csv_dir: Path) -> tuple[list[dict], int]:
     posts = []
     seen_ids = set()
-    for csv_file in sorted(csv_dir.glob("*.csv")):
+    csv_files = sorted(csv_dir.glob("*.csv"))
+    csv_count = len(csv_files)
+    for csv_file in csv_files:
         for row in parse_csv(csv_file):
             if row["post_id"] not in seen_ids:
                 seen_ids.add(row["post_id"])
                 posts.append(row)
-    return posts
+    return posts, csv_count
 
 
 # ---------------------------------------------------------------------------
@@ -248,12 +250,18 @@ def analyze_engagement_types(posts: list[dict]) -> dict:
 # サマリー統計
 # ---------------------------------------------------------------------------
 
-def compute_summary(posts: list[dict]) -> dict:
+def compute_summary(posts: list[dict], csv_count: int) -> dict:
     valid = [p for p in posts if p["impressions"] > 0]
     if not valid:
         return {}
+
+    dates = sorted(p["date"] for p in valid)
+
     return {
+        "csv_file_count":  csv_count,
         "total_posts":     len(valid),
+        "date_oldest":     dates[0],
+        "date_newest":     dates[-1],
         "total_impressions": sum(p["impressions"] for p in valid),
         "total_url_clicks": sum(p["url_clicks"] for p in valid),
         "avg_impressions": round(sum(p["impressions"] for p in valid) / len(valid)),
@@ -271,6 +279,29 @@ def compute_summary(posts: list[dict]) -> dict:
 
 
 # ---------------------------------------------------------------------------
+# URL Clicks 上位投稿リスト（top_posts セクション）
+# ---------------------------------------------------------------------------
+
+def build_top_posts(posts: list[dict], n: int = 10) -> list[dict]:
+    valid = [p for p in posts if p["impressions"] > 0]
+    top = sorted(valid, key=lambda x: -x["url_clicks"])[:n]
+    return [
+        {
+            "rank":        i + 1,
+            "date":        p["date"],
+            "text":        p["text"][:80],
+            "impressions": p["impressions"],
+            "url_clicks":  p["url_clicks"],
+            "ctr":         p["ctr"],
+            "likes":       p["likes"],
+            "reposts":     p["reposts"],
+            "link":        p["link"],
+        }
+        for i, p in enumerate(top)
+    ]
+
+
+# ---------------------------------------------------------------------------
 # メイン
 # ---------------------------------------------------------------------------
 
@@ -285,17 +316,21 @@ def main():
     out_path = Path(args.out) if args.out else base / "knowledge" / "analysis_output.json"
 
     print(f"[analyze.py] CSVディレクトリ: {csv_dir}")
-    posts = load_all_csvs(csv_dir)
+    posts, csv_count = load_all_csvs(csv_dir)
+    print(f"[analyze.py] 読み込んだCSVファイル数: {csv_count}件")
     print(f"[analyze.py] 読み込んだ投稿数: {len(posts)}")
 
     posts = add_derived_metrics(posts)
 
+    summary = compute_summary(posts, csv_count)
+
     output = {
-        "summary":          compute_summary(posts),
+        "summary":          summary,
         "hooks":            analyze_hooks(posts),
         "hashtags":         analyze_hashtags(posts),
         "phases":           analyze_phases(posts),
         "engagement_types": analyze_engagement_types(posts),
+        "top_posts":        build_top_posts(posts),
     }
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
@@ -303,6 +338,22 @@ def main():
         json.dump(output, f, ensure_ascii=False, indent=2)
 
     print(f"[analyze.py] 出力完了: {out_path}")
+
+    # サマリー出力
+    valid_posts = [p for p in posts if p["impressions"] > 0]
+    total_imp = sum(p["impressions"] for p in valid_posts)
+    total_url = sum(p["url_clicks"] for p in valid_posts)
+    avg_ctr_pct = round(summary.get("avg_ctr", 0) * 100, 2)
+
+    print("")
+    print("=== データ処理完了 ===")
+    print(f"- 対象CSVファイル数: {csv_count}件")
+    print(f"- 集計投稿数: {len(valid_posts)}件")
+    print(f"- 分析対象期間: {summary.get('date_oldest', 'N/A')} 〜 {summary.get('date_newest', 'N/A')}")
+    print(f"- 総インプレッション: {total_imp}")
+    print(f"- 総URL Clicks: {total_url}")
+    print(f"- 平均CTR: {avg_ctr_pct}%")
+    print(f"- 出力ファイル: {out_path}")
 
 
 if __name__ == "__main__":
