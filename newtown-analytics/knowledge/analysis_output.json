@@ -1,12 +1,20 @@
 {
   "summary": {
-    "total_posts": 27,
-    "total_impressions": 35455,
-    "total_url_clicks": 492,
-    "avg_impressions": 1313,
-    "avg_url_clicks": 18.2,
-    "avg_ctr": 0.0131,
+    "csv_file_count": 6,
+    "total_posts": 30,
+    "date_oldest": "Fri, Feb 20, 2026",
+    "date_newest": "Wed, Feb 25, 2026",
+    "total_impressions": 39755,
+    "total_url_clicks": 568,
+    "avg_impressions": 1325,
+    "avg_url_clicks": 18.9,
+    "avg_ctr": 0.0134,
     "top_posts_by_imp": [
+      {
+        "text": "Dear13roがメイズバンク強盗を始めたみたい👀 URLからマルチビューを見て犯罪成功を応援しよう！ https://",
+        "impressions": 3549,
+        "url_clicks": 64
+      },
       {
         "text": "飛行場強盗実行中！！ 逃走劇を見よう！！👀 https://t.co/R6BNDCSiG5 #NEWTOWN #Dear",
         "impressions": 3222,
@@ -26,14 +34,15 @@
         "text": "#Dear13ro マルチビューを使ってDear13ro.を応援しよう！ https://t.co/R6BNDCSiG5",
         "impressions": 2453,
         "url_clicks": 63
-      },
-      {
-        "text": "Dear13roがついにパシフィック銀行へ🔥 今日は一人のメンバーがお休みに入る特別な一戦。師弟13人が揃う今夜をマルチ",
-        "impressions": 2282,
-        "url_clicks": 34
       }
     ],
     "top_posts_by_url_clicks": [
+      {
+        "text": "Dear13roがメイズバンク強盗を始めたみたい👀 URLからマルチビューを見て犯罪成功を応援しよう！ https://",
+        "impressions": 3549,
+        "url_clicks": 64,
+        "ctr": 0.018
+      },
       {
         "text": "#Dear13ro マルチビューを使ってDear13ro.を応援しよう！ https://t.co/R6BNDCSiG5",
         "impressions": 2453,
@@ -57,32 +66,45 @@
         "impressions": 1544,
         "url_clicks": 50,
         "ctr": 0.0324
-      },
-      {
-        "text": "#SANTACLAWS マルチビューを使ってSANTA C.L.A.W.Sを応援しよう！ https://t.co/nn",
-        "impressions": 1203,
-        "url_clicks": 47,
-        "ctr": 0.0391
       }
     ]
   },
   "hooks": [
     {
       "hook_type": "その他",
-      "count": 8,
-      "avg_imp": 1272,
-      "avg_ctr": 0.011,
-      "avg_url_clicks": 14.9,
+      "count": 9,
+      "avg_imp": 1525,
+      "avg_ctr": 0.0118,
+      "avg_url_clicks": 20.3,
       "examples": [
+        {
+          "text": "Dear13roがメイズバンク強盗を始めたみたい👀 URLからマルチビューを見て犯罪成功を応援しよう",
+          "impressions": 3549,
+          "url_clicks": 64
+        },
         {
           "text": "Dear13roがついにパシフィック銀行へ🔥 今日は一人のメンバーがお休みに入る特別な一戦。師弟13",
           "impressions": 2282,
           "url_clicks": 34
+        }
+      ]
+    },
+    {
+      "hook_type": "事件名+実行中",
+      "count": 6,
+      "avg_imp": 1142,
+      "avg_ctr": 0.0114,
+      "avg_url_clicks": 14.7,
+      "examples": [
+        {
+          "text": "飛行場強盗実行中！！ 逃走劇を見よう！！👀 https://t.co/R6BNDCSiG5 #NEW",
+          "impressions": 3222,
+          "url_clicks": 57
         },
         {
-          "text": "NEWTOWNのあなたの応援しているギャングはありますか？ あなたの応援しているギャングをマルチビュ",
-          "impressions": 2030,
-          "url_clicks": 2
+          "text": "犯罪実行中！！ URLからatroce myrtilleを応援しよう👀 https://t.co/E",
+          "impressions": 1527,
+          "url_clicks": 13
         }
       ]
     },
@@ -102,25 +124,6 @@
           "text": "#SANTACLAWS マルチビューを使ってSANTA C.L.A.W.Sを応援しよう！ https",
           "impressions": 1203,
           "url_clicks": 47
-        }
-      ]
-    },
-    {
-      "hook_type": "事件名+実行中",
-      "count": 4,
-      "avg_imp": 1525,
-      "avg_ctr": 0.009,
-      "avg_url_clicks": 19.0,
-      "examples": [
-        {
-          "text": "飛行場強盗実行中！！ 逃走劇を見よう！！👀 https://t.co/R6BNDCSiG5 #NEW",
-          "impressions": 3222,
-          "url_clicks": 57
-        },
-        {
-          "text": "犯罪実行中！！ URLからatroce myrtilleを応援しよう👀 https://t.co/E",
-          "impressions": 1527,
-          "url_clicks": 13
         }
       ]
     },
@@ -211,15 +214,15 @@
         "#Dear13ro",
         "#NEWTOWN"
       ],
-      "count": 3,
-      "total_url_clicks": 108,
-      "max_url_clicks": 55,
-      "avg_url_clicks": 36.0,
-      "avg_imp": 2272,
+      "count": 4,
+      "total_url_clicks": 172,
+      "max_url_clicks": 64,
+      "avg_url_clicks": 43.0,
+      "avg_imp": 2591,
       "best_example": {
-        "text": "パレト銀行強盗が始まる👀 URLから同時視聴してみよう！ https://t.co/R6BNDCSiG5 #NEWTOW",
-        "url_clicks": 55,
-        "impressions": 2482
+        "text": "Dear13roがメイズバンク強盗を始めたみたい👀 URLからマルチビューを見て犯罪成功を応援しよう！ https://",
+        "url_clicks": 64,
+        "impressions": 3549
       }
     },
     {
@@ -256,6 +259,21 @@
     },
     {
       "tags": [
+        "#AtroceMyrtille"
+      ],
+      "count": 2,
+      "total_url_clicks": 57,
+      "max_url_clicks": 50,
+      "avg_url_clicks": 28.5,
+      "avg_imp": 955,
+      "best_example": {
+        "text": "#AtroceMyrtille マルチビューを使ってatroce myrtilleを応援しよう！ https://t.c",
+        "url_clicks": 50,
+        "impressions": 1544
+      }
+    },
+    {
+      "tags": [
         "#NEWTOWN",
         "#NEWTOWNGTA"
       ],
@@ -268,21 +286,6 @@
         "text": "StreamerHubにMultiViewにNEWTOWNを登録しました！ マルチビューでNEWTOWNをより楽しもう！",
         "url_clicks": 41,
         "impressions": 958
-      }
-    },
-    {
-      "tags": [
-        "#AtroceMyrtille"
-      ],
-      "count": 1,
-      "total_url_clicks": 50,
-      "max_url_clicks": 50,
-      "avg_url_clicks": 50.0,
-      "avg_imp": 1544,
-      "best_example": {
-        "text": "#AtroceMyrtille マルチビューを使ってatroce myrtilleを応援しよう！ https://t.c",
-        "url_clicks": 50,
-        "impressions": 1544
       }
     },
     {
@@ -427,18 +430,18 @@
     },
     {
       "tags": [
-        "#NEWTOWN",
+        "#NEWTOWNN",
         "#PERSEPHONE"
       ],
       "count": 1,
-      "total_url_clicks": 1,
-      "max_url_clicks": 1,
-      "avg_url_clicks": 1.0,
-      "avg_imp": 770,
+      "total_url_clicks": 5,
+      "max_url_clicks": 5,
+      "avg_url_clicks": 5.0,
+      "avg_imp": 385,
       "best_example": {
-        "text": "PERSEPHONEが犯罪実行中！ URLから犯罪を見守ろう！👀 #NEWTOWN #PERSEPHONE https:",
-        "url_clicks": 1,
-        "impressions": 770
+        "text": "PERSEPHONEが犯罪実行中！ URLから今すぐ犯罪を見守ろう！👀 https://t.co/WkHkvx9Sbl ",
+        "url_clicks": 5,
+        "impressions": 385
       }
     }
   ],
@@ -458,6 +461,13 @@
       "avg_ctr": 0.018
     },
     {
+      "phase": "実行中・進行中",
+      "count": 6,
+      "avg_imp": 1142,
+      "avg_url_clicks": 14.7,
+      "avg_ctr": 0.0114
+    },
+    {
       "phase": "イベント紹介",
       "count": 3,
       "avg_imp": 1757,
@@ -465,11 +475,11 @@
       "avg_ctr": 0.0196
     },
     {
-      "phase": "実行中・進行中",
-      "count": 4,
-      "avg_imp": 1525,
-      "avg_url_clicks": 19.0,
-      "avg_ctr": 0.009
+      "phase": "結果・余韻",
+      "count": 1,
+      "avg_imp": 3549,
+      "avg_url_clicks": 64.0,
+      "avg_ctr": 0.018
     },
     {
       "phase": "開始前告知",
@@ -518,10 +528,15 @@
       "examples": []
     },
     "low_performer": {
-      "count": 19,
-      "avg_ctr": 0.0077,
-      "avg_url_clicks": 10.3,
+      "count": 22,
+      "avg_ctr": 0.009,
+      "avg_url_clicks": 12.4,
       "examples": [
+        {
+          "text": "Dear13roがメイズバンク強盗を始めたみたい👀 URLからマルチビューを見て犯罪成功を応援しよう！ https://",
+          "url_clicks": 64,
+          "ctr": 0.018
+        },
         {
           "text": "飛行場強盗実行中！！ 逃走劇を見よう！！👀 https://t.co/R6BNDCSiG5 #NEWTOWN #Dear",
           "url_clicks": 57,
@@ -531,13 +546,120 @@
           "text": "Dear13roがついにパシフィック銀行へ🔥 今日は一人のメンバーがお休みに入る特別な一戦。師弟13人が揃う今夜をマルチ",
           "url_clicks": 34,
           "ctr": 0.0149
-        },
-        {
-          "text": "客船強盗が始まる！！ #NEWTOWN #Dear13ro https://t.co/2RTrvfnqOu https:",
-          "url_clicks": 19,
-          "ctr": 0.0093
         }
       ]
     }
-  }
+  },
+  "top_posts": [
+    {
+      "rank": 1,
+      "date": "Wed, Feb 25, 2026",
+      "text": "Dear13roがメイズバンク強盗を始めたみたい👀 URLからマルチビューを見て犯罪成功を応援しよう！ https://t.co/2RTrvfnYE2 #Dea",
+      "impressions": 3549,
+      "url_clicks": 64,
+      "ctr": 0.018,
+      "likes": 5,
+      "reposts": 0,
+      "link": "https://x.com/StreamerHubJP/status/2026666185195139259"
+    },
+    {
+      "rank": 2,
+      "date": "Thu, Feb 19, 2026",
+      "text": "#Dear13ro マルチビューを使ってDear13ro.を応援しよう！ https://t.co/R6BNDCSiG5 https://t.co/TAWnpL",
+      "impressions": 2453,
+      "url_clicks": 63,
+      "ctr": 0.0257,
+      "likes": 4,
+      "reposts": 0,
+      "link": "https://x.com/StreamerHubJP/status/2024488013812945202"
+    },
+    {
+      "rank": 3,
+      "date": "Fri, Feb 20, 2026",
+      "text": "飛行場強盗実行中！！ 逃走劇を見よう！！👀 https://t.co/R6BNDCSiG5 #NEWTOWN #Dear13ro #Dear13roに気をつけろ",
+      "impressions": 3222,
+      "url_clicks": 57,
+      "ctr": 0.0177,
+      "likes": 1,
+      "reposts": 0,
+      "link": "https://x.com/StreamerHubJP/status/2024853694538489958"
+    },
+    {
+      "rank": 4,
+      "date": "Fri, Feb 20, 2026",
+      "text": "パレト銀行強盗が始まる👀 URLから同時視聴してみよう！ https://t.co/R6BNDCSiG5 #NEWTOWN #Dear13ro https://",
+      "impressions": 2482,
+      "url_clicks": 55,
+      "ctr": 0.0222,
+      "likes": 3,
+      "reposts": 0,
+      "link": "https://x.com/StreamerHubJP/status/2024808696216420368"
+    },
+    {
+      "rank": 5,
+      "date": "Thu, Feb 19, 2026",
+      "text": "#AtroceMyrtille マルチビューを使ってatroce myrtilleを応援しよう！ https://t.co/Ei9t0UmnqR https:/",
+      "impressions": 1544,
+      "url_clicks": 50,
+      "ctr": 0.0324,
+      "likes": 3,
+      "reposts": 0,
+      "link": "https://x.com/StreamerHubJP/status/2024488010608410741"
+    },
+    {
+      "rank": 6,
+      "date": "Thu, Feb 19, 2026",
+      "text": "#SANTACLAWS マルチビューを使ってSANTA C.L.A.W.Sを応援しよう！ https://t.co/nn58IcBTZ0 https://t.c",
+      "impressions": 1203,
+      "url_clicks": 47,
+      "ctr": 0.0391,
+      "likes": 8,
+      "reposts": 1,
+      "link": "https://x.com/StreamerHubJP/status/2024488020628623509"
+    },
+    {
+      "rank": 7,
+      "date": "Tue, Feb 17, 2026",
+      "text": "StreamerHubにMultiViewにNEWTOWNを登録しました！ マルチビューでNEWTOWNをより楽しもう！！ https://t.co/2RTrv",
+      "impressions": 958,
+      "url_clicks": 41,
+      "ctr": 0.0428,
+      "likes": 1,
+      "reposts": 1,
+      "link": "https://x.com/StreamerHubJP/status/2023675638255927416"
+    },
+    {
+      "rank": 8,
+      "date": "Tue, Feb 24, 2026",
+      "text": "Dear13roがついにパシフィック銀行へ🔥 今日は一人のメンバーがお休みに入る特別な一戦。師弟13人が揃う今夜をマルチビューで追おう！！ お気をつけてええええ",
+      "impressions": 2282,
+      "url_clicks": 34,
+      "ctr": 0.0149,
+      "likes": 3,
+      "reposts": 0,
+      "link": "https://x.com/StreamerHubJP/status/2026301074609737838"
+    },
+    {
+      "rank": 9,
+      "date": "Fri, Feb 20, 2026",
+      "text": "宝石店強盗が始まる！ URLから強盗成功を見守ろう👀 https://t.co/WkHkvx9Sbl #Persephone #NEWTOWN https://",
+      "impressions": 1251,
+      "url_clicks": 28,
+      "ctr": 0.0224,
+      "likes": 4,
+      "reposts": 1,
+      "link": "https://x.com/StreamerHubJP/status/2024845286049485054"
+    },
+    {
+      "rank": 10,
+      "date": "Wed, Feb 18, 2026",
+      "text": "客船強盗が始まる！！ #NEWTOWN #Dear13ro https://t.co/2RTrvfnqOu https://t.co/pJwYniKzn7",
+      "impressions": 2052,
+      "url_clicks": 19,
+      "ctr": 0.0093,
+      "likes": 0,
+      "reposts": 0,
+      "link": "https://x.com/StreamerHubJP/status/2024106859838214621"
+    }
+  ]
 }
