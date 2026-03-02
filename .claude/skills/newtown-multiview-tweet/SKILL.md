@@ -2,7 +2,6 @@
 name: newtown-multiview-tweet
 description: StreamerHubのNEWTOWN向けマルチビュー投稿（X/ツイート）を作成し、x_post/ファイルに保存する。告知、開始直後、盛り上がり中、初見向け導線、結果共有の文面を作るときに使う。
 argument-hint: "[投稿タイプ] [配信内容/見どころ/ハッシュタグ/URL など]"
-user-invocable: true
 disable-model-invocation: false
 ---
 

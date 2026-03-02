@@ -1,0 +1,302 @@
+# ----------------------------------------
+# レポートのスナップショット
+# アカウント: Default Account for Firebase
+# プロパティ: streamerhub
+# ----------------------------------------
+#  
+# 開始日: 20260203
+# 終了日: 20260302
+アクティブ ユーザー,新規ユーザー数,アクティブ ユーザーあたりの平均エンゲージメント時間,イベント数
+468,468,512.207264957265,15164
+
+#  
+# 開始日: 20260203
+# 終了日: 20260302
+ページ タイトルとスクリーン クラス,表示回数,アクティブ ユーザー,イベント数,直帰率
+NEWTOWN - MultiView | StreamerHub,695,253,5612,0.41501103752759383
+StreamerHub,472,76,880,0.0948905109489051
+NEWTOWN | StreamerHub,470,137,5283,0.34560906515580736
+NEWTOWN - ギャング [Dear13ro.] | StreamerHub,179,45,1860,0.264
+NEWTOWN - ギャング [atroce myrtille] | StreamerHub,90,43,755,0.3709677419354839
+NEWTOWN - ギャング [PERSEPHONE] | StreamerHub,26,13,187,0.45
+NEWTOWN - Share | StreamerHub,22,16,157,0.4375
+NEWTOWN - 警察 | StreamerHub,11,3,106,0.14285714285714285
+NEWTOWN - ギャング [SANTA C.L.A.W.S] | StreamerHub,7,4,93,0.25
+NEWTOWN - Gang [Dear13ro.] | StreamerHub,5,1,134,0.25
+Gon.G GON軍団 - MultiView | StreamerHub,4,4,17,0.75
+Multi View gta-neetown-2026 | StreamerHub,3,1,8,0
+NEWTOWN - ギャング [どらごん・ぽめらにあん] | StreamerHub,3,2,14,0
+Multi View gta-newtown-2026 | StreamerHub,2,2,4,0
+Multi View gta-newtown | StreamerHub,1,1,5,0
+
+#  
+# 開始日: 20260203
+# 終了日: 20260302
+ユーザーの最初の参照元 / メディア,アクティブ ユーザー
+t.co / referral,379
+(direct) / (none),81
+facebook.com / referral,4
+google / organic,2
+m.facebook.com / referral,2
+
+#  
+# 開始日: 20260203
+# 終了日: 20260302
+セッションの参照元 / メディア,セッション
+t.co / referral,805
+(direct) / (none),204
+yahoo / organic,40
+google / organic,16
+facebook.com / referral,4
+m.facebook.com / referral,2
+
+#  
+# 開始日: 20260203
+# 終了日: 20260302
+N 日目,new,returning
+0000,0,0
+0001,0,0
+0002,0,0
+0003,0,0
+0004,0,0
+0005,0,0
+0006,0,0
+0007,0,0
+0008,0,0
+0009,0,0
+0010,0,0
+0011,0,0
+0012,0,0
+0013,0,0
+0014,0,0
+0015,0,0
+0016,0,0
+0017,79,13
+0018,101,26
+0019,39,26
+0020,29,18
+0021,46,21
+0022,58,26
+0023,65,34
+0024,11,28
+0025,18,25
+0026,27,22
+0027,0,1
+
+# プラットフォーム上のアクティビティの比較
+# 開始日: 20260203
+# 終了日: 20260302
+プラットフォーム,キーイベント
+
+
+#  
+# 開始日: 20260203
+# 終了日: 20260302
+市区町村,アクティブ ユーザー
+Osaka,35
+Sapporo,18
+Kobe,15
+Shinjuku City,15
+Shibuya,14
+Sakura,11
+Tahara,10
+Yokohama,10
+Nagoya,9
+Fukuoka,7
+Hiroshima,7
+Kawasaki,7
+Minato City,7
+Setagaya City,7
+Kawaguchi,6
+Kyoto,6
+Saitama,6
+Suginami City,6
+Amagasaki,5
+Mito,5
+Niigata,5
+Ota City,5
+Sagamihara,5
+Sakai,5
+Sendai,5
+Shizuoka,5
+Chiyoda City,4
+Fujinomiya,4
+Itabashi City,4
+Matsudo,4
+Obihiro,4
+Okayama,4
+Takasaki,4
+Ayase,3
+Hachinohe,3
+Iida,3
+Kita City,3
+Koriyama,3
+Koshigaya,3
+Nagano,3
+Narashino,3
+Yokkaichi,3
+21570,2
+Council Bluffs,2
+Forest City,2
+Fukuyama,2
+Hachioji,2
+Iyo,2
+Kashiwa,2
+Kasukabe,2
+Kiryu,2
+Kitakyushu,2
+Koto City,2
+Kumamoto,2
+Machida,2
+Matsubara,2
+Mitaka,2
+Morioka,2
+Nara,2
+Nerima City,2
+Niihama,2
+Nishinomiya,2
+Nishitokyo,2
+Oharu,2
+Seoul,2
+Shimada,2
+Suita,2
+Sumida City,2
+Taito City,2
+Takaoka,2
+Toshima City,2
+Toyokawa,2
+Tsu,2
+Tsukuba,2
+Ueda,2
+Uenohara,2
+Yamato,2
+Agano,1
+Aizuwakamatsu,1
+Akashi,1
+Akita,1
+Anseong-si,1
+Aomori,1
+Asaka,1
+Aspen,1
+Boardman,1
+Bunkyo City,1
+Buzen,1
+Changwon-si,1
+Chiba,1
+Chigasaki,1
+Chita,1
+Chuo City,1
+Edogawa City,1
+Ena,1
+Fort Worth,1
+Funabashi,1
+Gallatin,1
+Gifu,1
+Gunung Putri,1
+Habikino,1
+Haebaru,1
+Hakodate,1
+Hamamatsu,1
+Handa,1
+Hanover,1
+Higashiosaka,1
+Hikone,1
+Hiratsuka,1
+Hirosaki,1
+Hitachi,1
+Hitachinaka,1
+Ibaraki,1
+Ichikawa,1
+Ichinomiya,1
+Iizuka,1
+Ina,1
+Inabe,1
+Iruma,1
+Isesaki,1
+Itami,1
+Iwaki,1
+Izumo,1
+Kaita,1
+Kakogawa,1
+Kanie,1
+Kashiba,1
+Kashihara,1
+Katsushika City,1
+Kawagoe,1
+Kimitsu,1
+Kitajima,1
+Kiyama,1
+Kizugawa,1
+Kohima,1
+Konan,1
+Konosu,1
+Kuki,1
+Kumatori,1
+Kurume,1
+Kutchan,1
+Kyotanabe,1
+Lapu-Lapu,1
+Maebashi,1
+Maibara,1
+Miki,1
+Minami-Alps,1
+Miyakonojo,1
+Miyazaki,1
+Nagaokakyo,1
+Nagareyama,1
+Nagasaki,1
+Naha,1
+Neyagawa,1
+Nonthaburi,1
+Odawara,1
+Oita,1
+Oizumi,1
+Okazaki,1
+Onojo,1
+Otawara,1
+Padang,1
+Plymouth,1
+Prineville,1
+Sasebo,1
+Sennan,1
+Seto,1
+Shah Alam,1
+Shanghai,1
+Shibecha,1
+Shihoro,1
+Shiso,1
+Sukagawa,1
+Suwa,1
+Tachikawa,1
+Takamatsu,1
+Takarazuka,1
+Takatsuki,1
+Tama,1
+Tarui,1
+Tateyama,1
+Togo,1
+Tokai,1
+Tokushima,1
+Toride,1
+Tottori,1
+Toyama,1
+Toyohashi,1
+Toyota,1
+Tsuchiura,1
+Tsukubamirai,1
+Ube,1
+Uruma,1
+Utsunomiya,1
+Wakkanai,1
+Warabi,1
+Yamagata,1
+Yao,1
+Yokosuka,1
+Yonago,1
+Yotsukaido,1
+
+#  
+# 開始日: 20260203
+# 終了日: 20260302
+オーディエンス名,アクティブ ユーザー
+All Users,468
