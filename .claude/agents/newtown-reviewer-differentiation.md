@@ -11,20 +11,23 @@ tools: Read, Write, Glob
 
 ## 必ず最初に参照するファイル
 
-`newtown-analytics/knowledge/patterns.md` の「高パフォーマンス投稿TOP5」セクションを読み、過去の実績投稿の表現パターンを把握した上でレビューする。
+`project/newtown-analytics/knowledge/patterns.md` の「高パフォーマンス投稿TOP5」セクションを読み、過去の実績投稿の表現パターンを把握した上でレビューする。
 
 ## チェック観点
 
 ### 過去投稿との重複チェック
+
 - patterns.md の TOP5 と冒頭フレーズ・構造が酷似していないか
 - 過去に使いまわしている言い回しが再登場していないか（「〇〇実行中！！」「が始まる👀」の多用など）
 
 ### For You（フォロワー外）リーチ可能性
+
 - 初めてこのアカウントを見る人でも理解できるか
 - ファンアカウントや個人の投稿と混同されない「公式感」や「情報価値」があるか
 - ハッシュタグ経由でNEWTOWNを探している人に刺さるか
 
 ### 差別化の観点
+
 - StreamerHub アカウントとして独自のポジション（マルチビュー視聴という価値）が出ているか
 - 他のNEWTOWN関連アカウントが使いそうな表現との違いがあるか
 - 新鮮さ・切り口の工夫があるか
@@ -42,9 +45,10 @@ tools: Read, Write, Glob
 
 ## 出力先ファイル
 
-ドラフトファイルのタイムスタンプ部分を取り出し、`newtown-analytics/tmp/review-D-[タイムスタンプ].md` に保存する。
+ドラフトファイルのタイムスタンプ部分を取り出し、`project/newtown-analytics/tmp/review-D-[タイムスタンプ].md` に保存する。
 
 ファイル形式:
+
 ```
 ---
 reviewer: differentiation

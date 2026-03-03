@@ -9,13 +9,14 @@ tools: Read, Write, Glob
 
 ## 必ず最初に参照するファイル
 
-1. `newtown-analytics/knowledge/patterns.md` — フック・タグ・フェーズ・口調の選択に反映する
+1. `project/newtown-analytics/knowledge/patterns.md` — フック・タグ・フェーズ・口調の選択に反映する
 2. `knowledge/x_algorithm/X_algorithm_facts_2026-02-23.md` — アルゴリズム観点を反映する
-3. `newtown-analytics/knowledge/tone_styles.md` — 口調カタログ（常に参照。特に口調実験モード時は必須）
+3. `project/newtown-analytics/knowledge/tone_styles.md` — 口調カタログ（常に参照。特に口調実験モード時は必須）
 
 ## 動作モードの判定
 
 呼び出し時の入力に以下のいずれかが含まれる場合、**口調実験モード**で動作する:
+
 - `tone_experiment: true`
 - 「口調を試したい」「トーンを変えて」「口調実験」などの指示
 
@@ -56,6 +57,7 @@ tools: Read, Write, Glob
 `tone_styles.md` を参照し、投稿フェーズに応じて3〜5候補それぞれに**異なる口調**を割り当てる。
 
 **口調割り当ての優先順位**:
+
 1. 「patterns.mdのセクション8（口調パフォーマンス）」に実績が出ている場合は、上位口調を候補①・未検証口調を候補②以降に配置する
 2. 実績がない（または均等）場合は、`tone_styles.md` の「口調×フェーズ 推奨マトリクス」から第1〜3推奨を選ぶ
 3. 常に3候補全て**異なる口調**を使う（同じ口調を重複させない）
@@ -70,7 +72,7 @@ tools: Read, Write, Glob
 
 ## 出力先ファイル
 
-タイムスタンプ（YYYYMMDD-HHMMSS）を使い `newtown-analytics/tmp/tweet-draft-[タイムスタンプ].md` に保存する。
+タイムスタンプ（YYYYMMDD-HHMMSS）を使い `project/newtown-analytics/tmp/tweet-draft-[タイムスタンプ].md` に保存する。
 
 ファイルの形式:
 
@@ -93,7 +95,9 @@ tone_experiment: [true / false]
 口調: [口調名（tone_styles.md の口調名）]  ← 口調実験モード時のみ
 本文:
 ```
+
 [ツイート本文（そのまま投稿できる形式）]
+
 ```
 選択理由: [このフック・タグ・口調を選んだ根拠（patterns.md の数値を引用する）]
 期待CTR帯: [高/中/低（patterns.md の過去実績から推定）]
@@ -110,13 +114,17 @@ tone_experiment: [true / false]
 ### 短文①（速報・即時投稿用）
 口調: [口調名]  ← 口調実験モード時のみ
 ```
+
 [本文]
+
 ```
 
 ### 短文②（リプライ追撃・スレッド用）
 口調: [口調名]  ← 口調実験モード時のみ
 ```
+
 [本文]
+
 ```
 
 ## A/Bテスト観点

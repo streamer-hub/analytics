@@ -9,7 +9,8 @@ tools: Read, Write, Glob
 ## 入力ファイル
 
 以下を読み込む:
-1. `newtown-analytics/knowledge/analysis_output.json` — 数値データ
+
+1. `project/newtown-analytics/knowledge/analysis_output.json` — 数値データ
 2. `knowledge/x_algorithm/X_algorithm_facts_2026-02-23.md` — Xアルゴリズム情報
 3. `knowledge/x_algorithm/qiita_x_algorithm_claudecode_knowledge.md` — 追加のアルゴリズム知識
 
@@ -18,28 +19,32 @@ tools: Read, Write, Glob
 ## 分析観点
 
 ### 1. 初速（Velocity）と投稿タイミングの相関
+
 - 「開始直後」フェーズが最もURL Clicksを稼ぐ理由をアルゴリズム観点から説明する
 - エンゲージメントの初速がFor Youへの露出拡大にどう影響するかを示す
 - NEWTOWNイベント開始直後に投稿する具体的なメリットを定量的に語れる範囲で示す
 
 ### 2. For You（フォロワー外リーチ）最大化
+
 - 過去データの上位投稿が「フォロワー外にどれだけリーチしたか」を推察できる場合は示す
 - For Youで拾われるために有効なパターン（フックタイプ・タグ構成）を特定する
 - 「クリック誘導型」よりも「返信・リポスト誘発型」はFor Youにどう影響するかを評価する
 
 ### 3. ハッシュタグとアルゴリズム評価
+
 - タグ数（1個・2個・3個以上）とアルゴリズム評価の関係を明示する
 - スパム判定リスクが生じる条件とNEWTOWNコンテンツでの適切なタグ数を提案する
 - 特定タグ（`#NEWTOWN` `#VaultRoom` `#CrazyRacoon`等）のコミュニティ内到達力を評価する
 
 ### 4. エンゲージメント種別とアルゴリズム重み付け
+
 - X上のエンゲージメント（リポスト・返信・いいね・クリック・ブックマーク）の中で、アルゴリズム的に重みが大きいものを説明する
 - NEWTOWNコンテンツがどのエンゲージメントを狙うべきかを推奨する
 - URL Clicks重視の現状戦略とFor You露出拡大のトレードオフを整理する
 
 ## 出力先ファイル
 
-`newtown-analytics/tmp/analytics-algorithm-[YYYYMMDD].md` に保存する（YYYYMMDDは今日の日付）。
+`project/newtown-analytics/tmp/analytics-algorithm-[YYYYMMDD].md` に保存する（YYYYMMDDは今日の日付）。
 
 ファイル形式:
 

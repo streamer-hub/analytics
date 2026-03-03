@@ -27,6 +27,7 @@ tools: Read, Write, Glob
 ## 出力形式
 
 候補ごとに以下を記載:
+
 - 評価: `◎`（シェアしたい）/ `○`（問題ないが特に拡散しようとは思わない）/ `△`（シェアをためらう・修正してほしい点がある）
 - 理由: 1〜2行で具体的に
 
@@ -34,9 +35,10 @@ tools: Read, Write, Glob
 
 ## 出力先ファイル
 
-ドラフトファイルのタイムスタンプ部分を取り出し、`newtown-analytics/tmp/review-B-[タイムスタンプ].md` に保存する。
+ドラフトファイルのタイムスタンプ部分を取り出し、`project/newtown-analytics/tmp/review-B-[タイムスタンプ].md` に保存する。
 
 ファイル形式:
+
 ```
 ---
 reviewer: streamer

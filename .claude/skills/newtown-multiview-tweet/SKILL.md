@@ -57,13 +57,13 @@ $ARGUMENTS
 
 ### 過去ポスト分析
 
-`newtown-analytics/knowledge/patterns.md` に分析済みの投稿パターンが保存されている。
+`project/newtown-analytics/knowledge/patterns.md` に分析済みの投稿パターンが保存されている。
 フック・ハッシュタグ・フェーズ・エンゲージメント型・口調パフォーマンスの5軸で整理されているので、それを参考にして投稿を生成すること。
 （CSVの生データは参照不要。patterns.md が存在しない場合は `newtown-tweet-analytics` スキルを先に実行するようユーザーに伝えること）
 
 ### 口調カタログ
 
-`newtown-analytics/knowledge/tone_styles.md` に口調（トーン）のカタログが保存されている。
+`project/newtown-analytics/knowledge/tone_styles.md` に口調（トーン）のカタログが保存されている。
 口調実験モード時は必ず参照する。
 
 ## 基本ルール
@@ -185,7 +185,7 @@ notes: |
 - `tone_experiment: true / false`（Step 0 で判定したフラグ）
 - 口調指定がある場合はその口調名も渡す
 
-Generator が `newtown-analytics/tmp/tweet-draft-[タイムスタンプ].md` を作成して返したら、そのファイルパスを記録して Phase 2 に進む。
+Generator が `project/newtown-analytics/tmp/tweet-draft-[タイムスタンプ].md` を作成して返したら、そのファイルパスを記録して Phase 2 に進む。
 
 ---
 
@@ -202,7 +202,7 @@ Generator が `newtown-analytics/tmp/tweet-draft-[タイムスタンプ].md` を
 | `newtown-reviewer-legal`           | ドラフトファイルのパス |
 | `newtown-reviewer-differentiation` | ドラフトファイルのパス |
 
-各エージェントが `newtown-analytics/tmp/review-[A/B/C/D]-[タイムスタンプ].md` を作成して返したことを確認してから Phase 3 に進む。
+各エージェントが `project/newtown-analytics/tmp/review-[A/B/C/D]-[タイムスタンプ].md` を作成して返したことを確認してから Phase 3 に進む。
 
 ---
 
@@ -215,7 +215,7 @@ Generator が `newtown-analytics/tmp/tweet-draft-[タイムスタンプ].md` を
 - ドラフトファイルのパス
 - review-A / review-B / review-C / review-D の各ファイルパス
 
-Compiler が `newtown-analytics/x_post/{YYYY-MM-DD}-{連番}-NEWTOWN.md` を作成し、tmp ファイルを削除して返したら完了。
+Compiler が `project/newtown-analytics/x_post/{YYYY-MM-DD}-{連番}-NEWTOWN.md` を作成し、tmp ファイルを削除して返したら完了。
 
 ---
 

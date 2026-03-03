@@ -1,6 +1,6 @@
 ---
 name: newtown-analytics-reporter
-description: 全分析tmpファイルを統合し、ユーザー向けの全体分析レポートをnewtown-analytics/data/analytics_data/に新規保存する。newtown-tweet-analyticsスキルのStep 9（最終）として呼ばれる。
+description: 全分析tmpファイルを統合し、ユーザー向けの全体分析レポートをproject/newtown-analytics/data/analytics_data/に新規保存する。newtown-tweet-analyticsスキルのStep 9（最終）として呼ばれる。
 tools: Read, Write, Glob
 ---
 
@@ -10,23 +10,24 @@ tools: Read, Write, Glob
 
 以下のtmpファイルを全て読み込む（YYYYMMDDは今日の日付）:
 
-- `newtown-analytics/tmp/analytics-hook-[YYYYMMDD].md`
-- `newtown-analytics/tmp/analytics-hashtag-[YYYYMMDD].md`
-- `newtown-analytics/tmp/analytics-phase-[YYYYMMDD].md`
-- `newtown-analytics/tmp/analytics-algorithm-[YYYYMMDD].md`
-- `newtown-analytics/tmp/analytics-ga-[YYYYMMDD].md`（Google Analytics分析結果。存在しない場合はスキップ）
-- `newtown-analytics/tmp/analytics-hypothesis-[YYYYMMDD].md`
-- `newtown-analytics/knowledge/analysis_output.json`
+- `project/newtown-analytics/tmp/analytics-hook-[YYYYMMDD].md`
+- `project/newtown-analytics/tmp/analytics-hashtag-[YYYYMMDD].md`
+- `project/newtown-analytics/tmp/analytics-phase-[YYYYMMDD].md`
+- `project/newtown-analytics/tmp/analytics-algorithm-[YYYYMMDD].md`
+- `project/newtown-analytics/tmp/analytics-ga-[YYYYMMDD].md`（Google Analytics分析結果。存在しない場合はスキップ）
+- `project/newtown-analytics/tmp/analytics-hypothesis-[YYYYMMDD].md`
+- `project/newtown-analytics/knowledge/analysis_output.json`
 
 ## 処理手順
 
 ### Step 1: 出力ファイルのパスを決定する
 
-`newtown-analytics/data/analytics_data/` 内の既存ファイルを確認し、当日の連番を決定する:
+`project/newtown-analytics/data/analytics_data/` 内の既存ファイルを確認し、当日の連番を決定する:
+
 - 同日ファイルが存在しない場合: 連番 `01`
 - 存在する場合: 最大連番 + 1（例: `02`）
 
-保存先: `newtown-analytics/data/analytics_data/{YYYY-MM-DD}-{連番}-analytics.md`
+保存先: `project/newtown-analytics/data/analytics_data/{YYYY-MM-DD}-{連番}-analytics.md`
 
 ### Step 2: 全分析内容を統合してレポートを作成する
 
@@ -44,15 +45,15 @@ generated_by: newtown-tweet-analytics
 
 ## 概要
 
-| 指標 | 値 |
-|---|---|
-| 分析対象期間 | [期間] |
-| 集計投稿数 | [N]件 |
-| 総インプレッション | [N] |
-| 総URL Clicks | [N] |
-| 平均CTR | [N]% |
-| 平均インプレッション | [N] |
-| GA連携 | [あり（X流入ユーザー: N人）/ なし] |
+| 指標                 | 値                                 |
+| -------------------- | ---------------------------------- |
+| 分析対象期間         | [期間]                             |
+| 集計投稿数           | [N]件                              |
+| 総インプレッション   | [N]                                |
+| 総URL Clicks         | [N]                                |
+| 平均CTR              | [N]%                               |
+| 平均インプレッション | [N]                                |
+| GA連携               | [あり（X流入ユーザー: N人）/ なし] |
 
 ---
 
@@ -139,14 +140,15 @@ generated_by: newtown-tweet-analytics
 ## 5. 高パフォーマンス投稿 TOP5
 
 | 順位 | テキスト（抜粋） | Imp | URL Clicks | CTR | フェーズ | フック |
-|---|---|---|---|---|---|---|
+| ---- | ---------------- | --- | ---------- | --- | -------- | ------ |
+
 [analysis_output.jsonのtop_postsから転記]
 
 ---
 
 ## 6. Google Analytics分析：X→サイト流入・ページパフォーマンス
 
-[`analytics-ga-[YYYYMMDD].md` が存在する場合は以下のように転記。存在しない場合は「GAデータなし（newtown-analytics/data/google-analytics/にCSVを配置すると分析が有効になります）」と記載する]
+[`analytics-ga-[YYYYMMDD].md` が存在する場合は以下のように転記。存在しない場合は「GAデータなし（project/newtown-analytics/data/google-analytics/にCSVを配置すると分析が有効になります）」と記載する]
 
 ### X（t.co）流入サマリー
 
@@ -189,12 +191,12 @@ generated_by: newtown-tweet-analytics
 レポートの保存が完了したら、以下のtmpファイルを削除する:
 
 ```bash
-rm newtown-analytics/tmp/analytics-hook-[YYYYMMDD].md
-rm newtown-analytics/tmp/analytics-hashtag-[YYYYMMDD].md
-rm newtown-analytics/tmp/analytics-phase-[YYYYMMDD].md
-rm newtown-analytics/tmp/analytics-algorithm-[YYYYMMDD].md
-rm newtown-analytics/tmp/analytics-ga-[YYYYMMDD].md
-rm newtown-analytics/tmp/analytics-hypothesis-[YYYYMMDD].md
+rm project/newtown-analytics/tmp/analytics-hook-[YYYYMMDD].md
+rm project/newtown-analytics/tmp/analytics-hashtag-[YYYYMMDD].md
+rm project/newtown-analytics/tmp/analytics-phase-[YYYYMMDD].md
+rm project/newtown-analytics/tmp/analytics-algorithm-[YYYYMMDD].md
+rm project/newtown-analytics/tmp/analytics-ga-[YYYYMMDD].md
+rm project/newtown-analytics/tmp/analytics-hypothesis-[YYYYMMDD].md
 ```
 
 `analytics-ga-[YYYYMMDD].md` が存在しない場合はそのファイルの削除コマンドはスキップする。

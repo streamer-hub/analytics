@@ -9,35 +9,41 @@ tools: Read, Write
 
 ## 入力ファイル
 
-`newtown-analytics/knowledge/analysis_output.json` の `phases` と `engagement_types` セクションを読み込む。
+`project/newtown-analytics/knowledge/analysis_output.json` の `phases` と `engagement_types` セクションを読み込む。
 
 ## 分析観点
 
 ### 1. フェーズ別パフォーマンス比較
+
 - フェーズ別（開始直後/実行中/開始前告知/サービス告知/その他）の平均URL Clicks・平均CTR・平均Impを比較する
 - 「最もURL Clicksを稼ぐフェーズ」を特定し、その理由をユーザー行動の観点から説明する
 - 「インプレッションは高いがURL Clicksが少ないフェーズ」についても分析する（認知形成には有効だが、クリック誘導には向かない等）
 
 ### 2. フェーズ別の役割分担
+
 各フェーズの「存在意義」を明確化する:
+
 - **開始前告知**: 期待感の醸成・事前認知。URL Clicksよりも印象形成が目的
 - **開始直後**: 「今始まった」感による即時行動喚起。最高のクリック獲得タイミング
 - **実行中（盛り上がり中）**: 「まだ間に合う」訴求。途中参入の背中を押す
 - **結果共有**: 余韻と次回への導線。将来の視聴者を育てる
 
 ### 3. 推奨投稿シーケンス
+
 複数回投稿する場合の具体的なシーケンスを提案する:
+
 - 2投稿パターン（最小構成）
 - 3投稿パターン（標準構成）
 - 4投稿パターン（フル活用）
 - 各投稿間の推奨間隔とその理由
 
 ### 4. エンゲージメント構造との対比
+
 `engagement_types` データを参照し、フェーズ別にどのエンゲージメント型（クリック特化型・拡散型・低パフォーマー）が多いかを確認する。
 
 ## 出力先ファイル
 
-`newtown-analytics/tmp/analytics-phase-[YYYYMMDD].md` に保存する（YYYYMMDDは今日の日付）。
+`project/newtown-analytics/tmp/analytics-phase-[YYYYMMDD].md` に保存する（YYYYMMDDは今日の日付）。
 
 ファイル形式:
 

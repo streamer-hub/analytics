@@ -1,6 +1,6 @@
 ---
 name: newtown-analytics-compiler
-description: hook・hashtag・phase・algorithm・ga・hypothesisの各分析tmpファイルを統合し、newtown-analytics/knowledge/patterns.mdを上書き更新する。newtown-tweet-analyticsスキルのStep 8として呼ばれる。
+description: hook・hashtag・phase・algorithm・ga・hypothesisの各分析tmpファイルを統合し、project/newtown-analytics/knowledge/patterns.mdを上書き更新する。newtown-tweet-analyticsスキルのStep 8として呼ばれる。
 tools: Read, Write, Glob
 ---
 
@@ -10,14 +10,14 @@ tools: Read, Write, Glob
 
 以下のtmpファイルを全て読み込む（YYYYMMDDは今日の日付）:
 
-- `newtown-analytics/tmp/analytics-hook-[YYYYMMDD].md`
-- `newtown-analytics/tmp/analytics-hashtag-[YYYYMMDD].md`
-- `newtown-analytics/tmp/analytics-phase-[YYYYMMDD].md`
-- `newtown-analytics/tmp/analytics-algorithm-[YYYYMMDD].md`
-- `newtown-analytics/tmp/analytics-ga-[YYYYMMDD].md`（Google Analytics分析結果）
-- `newtown-analytics/tmp/analytics-hypothesis-[YYYYMMDD].md`
-- `newtown-analytics/knowledge/analysis_output.json`（数値テーブルの正確な値を取得するため）
-- `newtown-analytics/knowledge/tone_styles.md`（口調カタログ参照用）
+- `project/newtown-analytics/tmp/analytics-hook-[YYYYMMDD].md`
+- `project/newtown-analytics/tmp/analytics-hashtag-[YYYYMMDD].md`
+- `project/newtown-analytics/tmp/analytics-phase-[YYYYMMDD].md`
+- `project/newtown-analytics/tmp/analytics-algorithm-[YYYYMMDD].md`
+- `project/newtown-analytics/tmp/analytics-ga-[YYYYMMDD].md`（Google Analytics分析結果）
+- `project/newtown-analytics/tmp/analytics-hypothesis-[YYYYMMDD].md`
+- `project/newtown-analytics/knowledge/analysis_output.json`（数値テーブルの正確な値を取得するため）
+- `project/newtown-analytics/knowledge/tone_styles.md`（口調カタログ参照用）
 
 `analytics-ga-[YYYYMMDD].md` が存在しない場合は、GAセクションを「データなし（google-analytics/ディレクトリにCSVを配置すると有効になります）」と記載してスキップする。
 
@@ -25,7 +25,7 @@ tools: Read, Write, Glob
 
 ### Step 1: 既存のpatterns.mdを読み込む
 
-`newtown-analytics/knowledge/patterns.md` が存在する場合は読み込み、前回との差分（何が変わったか）を把握する。
+`project/newtown-analytics/knowledge/patterns.md` が存在する場合は読み込み、前回との差分（何が変わったか）を把握する。
 
 ### Step 2: 全tmpファイルから情報を統合する
 
@@ -33,7 +33,7 @@ tools: Read, Write, Glob
 
 ### Step 3: patterns.mdを上書き保存する
 
-以下のフォーマットで `newtown-analytics/knowledge/patterns.md` を上書き保存する:
+以下のフォーマットで `project/newtown-analytics/knowledge/patterns.md` を上書き保存する:
 
 ```markdown
 # NEWTOWN Tweet パターンナレッジ
@@ -45,21 +45,22 @@ tools: Read, Write, Glob
 
 ## サマリー（全体統計）
 
-| 指標 | 値 |
-|---|---|
-| 集計投稿数 | [N]件 |
-| 総インプレッション | [N] |
-| 総URL Clicks | [N] |
-| 平均CTR | [N]% |
-| 平均インプレッション | [N] |
-| 平均URL Clicks | [N] |
+| 指標                 | 値    |
+| -------------------- | ----- |
+| 集計投稿数           | [N]件 |
+| 総インプレッション   | [N]   |
+| 総URL Clicks         | [N]   |
+| 平均CTR              | [N]%  |
+| 平均インプレッション | [N]   |
+| 平均URL Clicks       | [N]   |
 
 ---
 
 ## 1. フック効果パターン（URL Clicks 効率順）
 
 | フックタイプ | 投稿数 | 平均Imp | 平均CTR | 平均URL Clicks | 推奨度 |
-|---|---|---|---|---|---|
+| ------------ | ------ | ------- | ------- | -------------- | ------ |
+
 [Hook Analystの数値テーブルを転記]
 
 ### 解釈（Hook Analyst + X Algorithm観点）
@@ -75,7 +76,8 @@ tools: Read, Write, Glob
 ## 2. ハッシュタグ組み合わせ（URL Clicks 順）
 
 | タグ構成 | 投稿数 | 最高URL Clicks | 平均URL Clicks | 平均Imp | 推奨度 |
-|---|---|---|---|---|---|
+| -------- | ------ | -------------- | -------------- | ------- | ------ |
+
 [Hashtag Analystの数値テーブルを転記]
 
 ### 解釈（Hashtag Analyst + X Algorithm観点）
@@ -91,7 +93,8 @@ tools: Read, Write, Glob
 ## 3. 投稿フェーズ別パフォーマンス
 
 | フェーズ | 投稿数 | 平均Imp | 平均URL Clicks | 平均CTR | 推奨 |
-|---|---|---|---|---|---|
+| -------- | ------ | ------- | -------------- | ------- | ---- |
+
 [Phase Analystの数値テーブルを転記]
 
 ### 解釈（Phase Analyst + X Algorithm観点）
@@ -107,9 +110,11 @@ tools: Read, Write, Glob
 ## 4. エンゲージメント構造分類
 
 ### クリック特化型パターン（CTR ≥ 2%）
+
 [analysis_output.jsonの engagement_types から転記]
 
 ### 低パフォーマー傾向
+
 [共通する失敗パターン]
 
 ---
@@ -117,7 +122,8 @@ tools: Read, Write, Glob
 ## 5. 高パフォーマンス投稿 TOP5（URL Clicks 順）
 
 | 順位 | テキスト（抜粋） | Imp | URL Clicks | CTR | フェーズ | フック |
-|---|---|---|---|---|---|---|
+| ---- | ---------------- | --- | ---------- | --- | -------- | ------ |
+
 [analysis_output.jsonのtop_postsから転記]
 
 ---
@@ -128,10 +134,10 @@ tools: Read, Write, Glob
 
 ### X流入サマリー
 
-| 指標 | 値 | 全体比 |
-|---|---|---|
-| X流入ユーザー（初回） | [N] | [N]% |
-| X流入セッション | [N] | [N]% |
+| 指標                  | 値  | 全体比 |
+| --------------------- | --- | ------ |
+| X流入ユーザー（初回） | [N] | [N]%   |
+| X流入セッション       | [N] | [N]%   |
 
 ### NEWTOWNページ パフォーマンス
 

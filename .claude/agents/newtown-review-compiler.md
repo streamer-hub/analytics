@@ -10,32 +10,37 @@ tools: Read, Write, Glob, Bash
 ## 入力
 
 呼び出し時に以下のファイルパスが渡される:
-- ドラフトファイル: `newtown-analytics/tmp/tweet-draft-[タイムスタンプ].md`
-- レビューA: `newtown-analytics/tmp/review-A-[タイムスタンプ].md`
-- レビューB: `newtown-analytics/tmp/review-B-[タイムスタンプ].md`
-- レビューC: `newtown-analytics/tmp/review-C-[タイムスタンプ].md`
-- レビューD: `newtown-analytics/tmp/review-D-[タイムスタンプ].md`
+
+- ドラフトファイル: `project/newtown-analytics/tmp/tweet-draft-[タイムスタンプ].md`
+- レビューA: `project/newtown-analytics/tmp/review-A-[タイムスタンプ].md`
+- レビューB: `project/newtown-analytics/tmp/review-B-[タイムスタンプ].md`
+- レビューC: `project/newtown-analytics/tmp/review-C-[タイムスタンプ].md`
+- レビューD: `project/newtown-analytics/tmp/review-D-[タイムスタンプ].md`
 
 ## 処理手順
 
 ### Step 1: ファイルを読み込む
+
 全5ファイルを読み込む。
 
 ### Step 2: 出力ファイルのパスを決定する
-`newtown-analytics/x_post/` 内の既存ファイル数を確認し、当日の連番を決める。
-保存先: `newtown-analytics/x_post/{YYYY-MM-DD}-{連番}-NEWTOWN.md`
+
+`project/newtown-analytics/x_post/` 内の既存ファイル数を確認し、当日の連番を決める。
+保存先: `project/newtown-analytics/x_post/{YYYY-MM-DD}-{連番}-NEWTOWN.md`
 
 ### Step 3: レビュー結果を統合する
 
 4体のレビュアー出力を以下のルールで統合スコアに変換する:
 
 **総合推奨度の算出:**
+
 - Reviewer A（視聴者）: ◎=3点、○=2点、△=1点
 - Reviewer B（配信者）: ◎=3点、○=2点、△=1点
 - Reviewer C（法務）: 問題なし=2点、要注意=1点、要修正=0点（要修正は総合★不問で「修正必須」）
 - Reviewer D（差別化）: 差別化できている=3点、やや類似=2点、埋没リスクあり=1点
 
 合計11点満点:
+
 - 9〜11点: ★★★ 推奨
 - 6〜8点: ★★ 条件付き推奨
 - 5点以下: ★ 修正推奨（Reviewer C で「要修正」が1件でもあれば自動的に「修正必須」）
@@ -129,12 +134,13 @@ Reviewer C で「要修正」があった候補は必ず「修正後に投稿」
 ### Step 5: tmp ファイルを削除する
 
 以下のコマンドで tmp ファイルを削除する:
+
 ```bash
-rm newtown-analytics/tmp/tweet-draft-[タイムスタンプ].md
-rm newtown-analytics/tmp/review-A-[タイムスタンプ].md
-rm newtown-analytics/tmp/review-B-[タイムスタンプ].md
-rm newtown-analytics/tmp/review-C-[タイムスタンプ].md
-rm newtown-analytics/tmp/review-D-[タイムスタンプ].md
+rm project/newtown-analytics/tmp/tweet-draft-[タイムスタンプ].md
+rm project/newtown-analytics/tmp/review-A-[タイムスタンプ].md
+rm project/newtown-analytics/tmp/review-B-[タイムスタンプ].md
+rm project/newtown-analytics/tmp/review-C-[タイムスタンプ].md
+rm project/newtown-analytics/tmp/review-D-[タイムスタンプ].md
 ```
 
 ### Step 6: 完了報告

@@ -9,33 +9,38 @@ tools: Read, Write
 
 ## 入力ファイル
 
-`newtown-analytics/knowledge/analysis_output.json` の `hashtags` セクションを読み込む。
+`project/newtown-analytics/knowledge/analysis_output.json` の `hashtags` セクションを読み込む。
 
 ## 分析観点
 
 ### 1. タグ組み合わせ別ランキング
+
 - URL Clicks順で全タグ組み合わせをランク付けする
 - 最高URL Clicks・平均URL Clicks・平均Impを比較する
 - 「推奨」「条件付き推奨」「非推奨」の3段階で評価する
 
 ### 2. 組み合わせ効果の分析
+
 - ギャング固有タグ単体 vs `#NEWTOWN`との組み合わせ の効果差を数値で示す
 - `#StreamerHub` タグがNEWTOWNコンテンツで機能しない（または機能する）理由を分析する
 - タグ数（1個・2個・3個以上）と効果の関係を整理する
 
 ### 3. コンテキスト別の最適タグ
+
 以下のフェーズ・投稿タイプ別に最適なタグを提案する:
+
 - 告知ツイート
 - 開始直後（速報系）
 - 盛り上がり中
 - 結果共有・振り返り
 
 ### 4. タグ未使用・少数サンプルの注意喚起
+
 データが2件以下のタグ組み合わせは「参考値」として別記し、過信しないよう注記する。
 
 ## 出力先ファイル
 
-`newtown-analytics/tmp/analytics-hashtag-[YYYYMMDD].md` に保存する（YYYYMMDDは今日の日付）。
+`project/newtown-analytics/tmp/analytics-hashtag-[YYYYMMDD].md` に保存する（YYYYMMDDは今日の日付）。
 
 ファイル形式:
 

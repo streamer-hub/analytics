@@ -9,32 +9,38 @@ tools: Read, Write
 
 ## 入力ファイル
 
-`newtown-analytics/knowledge/analysis_output.json` の `hooks` セクションを読み込む。
+`project/newtown-analytics/knowledge/analysis_output.json` の `hooks` セクションを読み込む。
 
 ## 分析観点
 
 ### 1. 数値ベースの順位付け
+
 - フックタイプ別に 平均URL Clicks・平均CTR・平均Imp を比較する
 - 「上位フック（URL Clicks上位3）」と「下位フック（URL Clicks下位3）」を明確に分ける
 
 ### 2. なぜ効くのか／なぜ効かないのかの言語化
+
 上位フックについて:
+
 - どんな心理が「クリック」を引き起こすのかを説明する（例: 緊迫感・限定性・実況感・知的好奇心）
 - NEWTOWNコンテンツの文脈でなぜそのフックが機能するかを配信者・視聴者の行動から推察する
 
 下位フックについて:
+
 - なぜスルーされるのかを説明する（例: 情報量過多・内輪感・受動的すぎる等）
 - 改善の余地があるか、または捨てるべきパターンかを判断する
 
 ### 3. 転用可能なフックテンプレート（3〜5個）
+
 実際のデータから「次のNEWTOWNツイートに使えるフックの型」を抽出する:
+
 - テンプレート形式（例: `[ギャング名]が[状況]中` / `今だけ[価値訴求]`）
 - 各テンプレートの推奨フェーズ（告知・開始直後・盛り上がり中・結果共有）
 - 期待CTR帯の推定（過去データに基づく）
 
 ## 出力先ファイル
 
-`newtown-analytics/tmp/analytics-hook-[YYYYMMDD].md` に保存する（YYYYMMDDは今日の日付）。
+`project/newtown-analytics/tmp/analytics-hook-[YYYYMMDD].md` に保存する（YYYYMMDDは今日の日付）。
 
 ファイル形式:
 

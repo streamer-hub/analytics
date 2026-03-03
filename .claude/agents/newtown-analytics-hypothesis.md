@@ -13,20 +13,21 @@ tools: Read, Write, Glob
 
 以下のtmpファイルを全て読み込む（YYYYMMDDは今日の日付）:
 
-- `newtown-analytics/tmp/analytics-hook-[YYYYMMDD].md`
-- `newtown-analytics/tmp/analytics-hashtag-[YYYYMMDD].md`
-- `newtown-analytics/tmp/analytics-phase-[YYYYMMDD].md`
-- `newtown-analytics/tmp/analytics-algorithm-[YYYYMMDD].md`
-- `newtown-analytics/tmp/analytics-ga-[YYYYMMDD].md`（Google Analytics分析結果）
-- `newtown-analytics/knowledge/analysis_output.json`（高パフォーマンス投稿の参照用）
-- `newtown-analytics/knowledge/tone_styles.md`（口調カタログ・実績ログ参照用）
-- `newtown-analytics/x_post/` 内の全 `.md` ファイル（口調実験の履歴参照用。Globで取得）
+- `project/newtown-analytics/tmp/analytics-hook-[YYYYMMDD].md`
+- `project/newtown-analytics/tmp/analytics-hashtag-[YYYYMMDD].md`
+- `project/newtown-analytics/tmp/analytics-phase-[YYYYMMDD].md`
+- `project/newtown-analytics/tmp/analytics-algorithm-[YYYYMMDD].md`
+- `project/newtown-analytics/tmp/analytics-ga-[YYYYMMDD].md`（Google Analytics分析結果）
+- `project/newtown-analytics/knowledge/analysis_output.json`（高パフォーマンス投稿の参照用）
+- `project/newtown-analytics/knowledge/tone_styles.md`（口調カタログ・実績ログ参照用）
+- `project/newtown-analytics/x_post/` 内の全 `.md` ファイル（口調実験の履歴参照用。Globで取得）
 
 `analytics-ga-[YYYYMMDD].md` が存在しない場合（GAデータなし）は、GA関連のセクションを「データなし」として記載してスキップする。
 
 ## 仮説の設計ルール
 
 良い仮説は以下の条件を満たす:
+
 1. **検証可能**: 「投稿してみれば結果がわかる」レベルで具体的
 2. **根拠がある**: 過去データの数値・パターンに基づいている
 3. **実行可能**: 次のNEWTOWNイベントですぐ試せる
@@ -35,23 +36,28 @@ tools: Read, Write, Glob
 ## 分析と仮説生成の手順
 
 ### Step 1: データギャップの特定
+
 - サンプル数が少ない（2件以下）組み合わせを特定する
 - 「試されていないが、試す価値がある」パターンを探す
 - 上位パターンでも「なぜ効くのか」の仮説がまだ検証されていない部分を探す
 
 ### Step 2: 成功パターンからの仮説
+
 - 上位フック×推奨タグ×最適フェーズの「最強の組み合わせ」を設計する
 - まだ試されていない上位要素の組み合わせを提案する
 
 ### Step 3: 失敗パターンからの仮説
+
 - 下位パターンを「改善して再試験する価値があるか」「捨てるべきか」を判断する
 - 改善して再試験する場合は具体的な改善案を示す
 
 ### Step 4: アルゴリズム仮説
+
 - For You拡大を狙ったフォーマット変更（返信誘発型・アンケート型）が有効かを仮説化する
 - URLなし投稿でリポスト数を上げてから、リプライでURL誘導する2段階戦略の有効性を検討する
 
 ### Step 4.5: GAデータ連携仮説
+
 `analytics-ga-[YYYYMMDD].md` を参照し、以下の仮説を生成する:
 
 - **X→サイト変換効率の改善仮説**: GAのX流入ユーザー数とXのURL Clicksを比較し、乖離がある場合はその要因を仮説化する
@@ -60,10 +66,11 @@ tools: Read, Write, Glob
 - **地域ターゲット仮説**: 特定都市の集中が見られる場合、その地域ユーザーに響くコンテンツ訴求を仮説化する
 
 ### Step 5: 口調（トーン）仮説
+
 以下の手順で口調の効果を分析し、仮説を生成する:
 
 1. **x_postファイルから口調メタデータを収集する**
-   - `newtown-analytics/x_post/` 内の全ファイルを読み込む
+   - `project/newtown-analytics/x_post/` 内の全ファイルを読み込む
    - frontmatter の `tone_experiments` フィールドを確認し、各候補の口調名を記録する
    - `tone_experiment: true` のファイルのみを口調実験データとして扱う
 
@@ -83,7 +90,7 @@ tools: Read, Write, Glob
 
 ## 出力先ファイル
 
-`newtown-analytics/tmp/analytics-hypothesis-[YYYYMMDD].md` に保存する（YYYYMMDDは今日の日付）。
+`project/newtown-analytics/tmp/analytics-hypothesis-[YYYYMMDD].md` に保存する（YYYYMMDDは今日の日付）。
 
 ファイル形式:
 
@@ -100,7 +107,7 @@ date: YYYY-MM-DD
 #### 仮説1: [仮説のタイトル]
 - **根拠**: [どのデータから導いたか（数値を引用）]
 - **仮説**: [〜をすると〜になるはず]
-- **実験案**: 
+- **実験案**:
   - A案（現状パターン）: [具体的な投稿方針]
   - B案（新パターン）: [具体的な投稿方針]
 - **判断指標**: [URL Clicks / CTR / Imp / リポスト数など、何で成否を判断するか]
