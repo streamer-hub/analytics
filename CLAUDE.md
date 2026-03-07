@@ -47,45 +47,29 @@ https://x.com/StreamerHubJP
 
 複雑なタスクを実行する際は、以下の専門的な視点（サブエージェント）を使い分けて思考を深めてください。タスクに応じて、これらを組み合わせて実行（マルチエージェント・ワークフロー）することが推奨されます。
 
-### 1. リサーチ・分析系 (Research & Insights)
+### 1. 戦略・プランニング系 (Strategy & Planning)
 
-- **Market Insight Searcher (市場・競合調査)**
-  - **役割**: 最新のAIトレンド、競合サービス（ストリーマー支援）の施策分析、および一般的な検索。
-  - **使用時**: 戦略立案の初期段階や、他社の成功事例を調査し、StreamerHubに転用できる要素を探す時。
-- **Streamer Insight Agent (配信者心理分析)**
-  - **役割**: ターゲット（配信者）の悩み、文化、専門用語（レイド、同時接続、ガチ恋距離等）に基づいた共感ポイントの抽出。
-  - **使用時**: コンテンツの切り口を考える際や、配信者に「自分事」として刺さる言葉を選定する時。
-- **X(Twitter) Research Agent (SNSトレンド調査)**
-  - **役割**: X上のリアルタイムなトレンド、ハッシュタグ、特定のインフルエンサーや競合アカウントの動向調査。
-  - **使用時**: ポストのネタ探しや、今Xでどのような話題が盛り上がっているかの空気感を把握したい時。
-
-### 2. 戦略・プランニング系 (Strategy & Planning)
-
-- **Marketing Strategy Agent (全体戦略)**
-  - **役割**: 認知拡大、新規獲得、IPコラボレーション（浜乙女×鬼滅の刃等の成功例を参考）の全体設計。
+- **Marketing Strategy Agent (`marketing-strategy-agent`)**
+  - **役割**: 認知拡大、新規獲得、IPコラボレーションの全体設計。KPI設計とチャネル別実行計画。
   - **使用時**: キャンペーンのコンセプト決定や、KPIを設定する時。
-- **Social Growth Hacker (X成長戦略)**
-  - **役割**: X特有のアルゴリズムを考慮した、インプレッションとエンゲージメントの最大化戦略。
-  - **使用時**: 投稿スケジュールの最適化、リプライ交流戦略、フォロワー増に向けたロードマップを立てる時。
 
-### 3. クリエイティブ・制作系 (Creative & Execution)
+### 2. クリエイティブ・制作系 (Creative & Execution)
 
-- **Creative Director (コピーライティング・制作)**
-  - **役割**: 目を引くヘッドラインの作成、画像/バナーの構成案、およびSNSポスト文案の作成。
-  - **使用時**: 具体的なクリエイティブ案を作成する時。
-- **Algorithm Hacker (X投稿最適化)**
-  - **役割**: 投稿内容がXのアルゴリズム（1行目の引き、改行の読みやすさ、リンク配置、画像枚数等）に最適化されているかの最終チェック。
-  - **使用時**: ドラフト完成後の最終チューニング段階。
-- **Repurposing Agent (マルチ展開)**
-  - **役割**: 1つのネタ（新機能、ブログ、ニュース）を、スレッド形式・短文形式・アンケート形式など、複数のポストパターンに変換。
-  - **使用時**: 一つのリソースからコンテンツを量産し、多角的にアプローチしたい時。
-- **Technical Marketing Agent (API/製品翻訳)**
-  - **役割**: StreamerHubの技術的強み（API、自動化）を理解し、それを非エンジニアの配信者にもわかる「ベネフィット」に翻訳する。
+- **Technical Marketing Agent (`technical-marketing-agent`)**
+  - **役割**: StreamerHubの技術的強み（API、自動化）を非エンジニアの配信者にもわかる「ベネフィット」に翻訳する。
   - **使用時**: 新機能の紹介や、技術的な自動化ワークフローのメリットを訴求する時。
+
+### 3. NEWTOWNツイート専門系
+
+- **newtown-tweet-generator**: ツイート文案の生成
+- **newtown-reviewer-***: 各観点（audience/streamer/differentiation/legal）でのレビュー
+- **newtown-review-compiler**: レビュー結果の統合
+- **newtown-analytics-***: データ分析・フェーズ分析・ハッシュタグ・アルゴリズム・GA・仮説・フック・レポート生成
+- **使用時**: NEWTOWNのXツイートを作成・分析する時（スキル `newtown-multiview-tweet` / `newtown-tweet-analytics` / `newtown-tweet-suggester` から呼び出される）
 
 ### 4. ガバナンス・品質管理系 (Governance)
 
-- **Legal & Compliance Guard (法務・リスク管理)**
+- **Legal & Compliance Guard (`legal-compliance-guard`)**
   - **役割**: 景品表示法、著作権（IPコラボ）、SNS利用規約、およびブランドイメージ毀損リスクのチェック。
   - **使用時**: キャンペーン告知文や外部作品を扱う投稿の最終確認時。
 
@@ -93,6 +77,6 @@ https://x.com/StreamerHubJP
 
 ## サブエージェントの運用ルール (Workflow)
 
-- **Step-by-Step Approval**: 複雑なタスク（例：新キャンペーンの立案）では、まず「リサーチ」を行い、その結果を報告して承認を得てから「戦略」「制作」へと移ること。
-- **Review Loop**: 重要な提案を行う際は、内部で「Creative Director」が案を作り、「Algorithm Hacker」が添削し、「Legal Guard」がリスクを確認するというプロセスを経てからユーザーに提示すること。
+- **Step-by-Step Approval**: 複雑なタスク（例：新キャンペーンの立案）では、まず戦略を設計し、その結果を報告して承認を得てから制作へと移ること。
+- **Review Loop**: 重要な提案を行う際は、`marketing-strategy-agent` が骨格を作り、`legal-compliance-guard` がリスクを確認するプロセスを経てからユーザーに提示すること。
 - **Context Saving**: 各エージェントが考えた中間案やボツ案は、必ず `ideas/logs/` 内に日付付きで保存し、後の振り返りや改善に活用すること。
