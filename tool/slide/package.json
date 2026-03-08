@@ -1,0 +1,10 @@
+{
+  "name": "streamerhub-slide-tool",
+  "version": "1.0.0",
+  "description": "PPTX slide generation tool for StreamerHub marketing",
+  "dependencies": {
+    "playwright": "^1.58.2",
+    "pptxgenjs": "^4.0.1",
+    "sharp": "^0.34.5"
+  }
+}

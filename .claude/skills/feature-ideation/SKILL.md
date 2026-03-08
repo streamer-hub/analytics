@@ -61,11 +61,47 @@ Aggregator が `ideas/{YYYYMMDD}-feature-roadmap.md` を作成し、tmpファイ
 
 ---
 
+## Phase 4: PPTXスライド生成
+
+Phase 3で作成したロードマップMarkdownをもとに、`slide-creator` スキルの手順に従ってPPTXスライドを作成する。
+
+**作業手順**（オーケストレーター自身が実行する）:
+
+1. **ロードマップを読み込む**: `ideas/{YYYYMMDD}-feature-roadmap.md` を Read ツールで読む
+
+2. **スライド構成を決める**（目安）:
+   - スライド1: タイトル（「StreamerHub 機能ロードマップ {YYYY年MM月}」）
+   - スライド2: サマリー（最優先機能TOP3）
+   - スライド3〜N: 優先度別の機能詳細（優先度Highを中心に）
+   - 最終スライド: 次のアクション
+
+3. **HTMLスライドを作成**: `tool/slide/slides/slide-{N}.html` に各スライドを作成
+   - サイズ: `width: 720pt; height: 405pt`（16:9）
+   - デザイン: **Black & Gold** パレット（#BF9A4A, #1A1A2E, #F4F6F6）
+   - フォント: Arial のみ使用
+   - テキストは必ず `<p>`, `<h1>`〜`<h6>`, `<ul>` タグ内に
+
+4. **generate.js を作成して実行**:
+   ```bash
+   cd tool/slide && node generate.js
+   ```
+   出力先: `output/{YYYYMMDD}-feature-roadmap.pptx`
+
+5. **サムネイルで確認**:
+   ```bash
+   cd tool/slide && python scripts/thumbnail.py ../../output/{YYYYMMDD}-feature-roadmap.pptx ../../output/thumbnails-roadmap
+   ```
+   Read ツールで画像を確認し、問題があれば修正して再生成
+
+6. **後片付け**: `tool/slide/slides/` と `tool/slide/generate.js` を削除
+
+---
+
 ## チャット返答フォーマット
 
 ファイル保存後に以下のみを返す:
 
-1. **完了報告** — 保存先パスを明示
+1. **完了報告** — Markdownとpptxの保存先パスを明示
 2. **最優先機能 TOP3** — 一言で紹介
 3. **次のアクション** — 「詳細設計に進むか、別テーマでブレストするか」を提案
 
@@ -77,3 +113,4 @@ Aggregator が `ideas/{YYYYMMDD}-feature-roadmap.md` を作成し、tmpファイ
 - Phase 1の8エージェントは必ず並列起動（逐次はNG）
 - Phase 2の3エージェントも必ず並列起動
 - Phase 3はPhase 2の全完了を確認してから起動
+- Phase 4はPhase 3の完了後に実行。HTMLと generate.js は `tool/slide/` 内に作成し、プロジェクトルートを汚さないこと
